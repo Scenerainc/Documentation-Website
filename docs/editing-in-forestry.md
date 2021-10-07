@@ -9,7 +9,7 @@ slug: forestry-cms
 [![](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=samuelhorn/jamdocs&engine=other&preview=https://res.cloudinary.com/forestry-io/image/fetch/w_400,h_300,c_fill,f_jpg/https://forestry.io/img/starters/jamdocs.png "Import to Forestry")
 
 This project has been pre-configured to work with Forestry, just import your repository ✨
-Any changes you make will be commited back to the repo,
+Any changes you make will be commited back to the repo.
 
 ## Start Instant Previews
 
