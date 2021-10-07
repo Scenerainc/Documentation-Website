@@ -16,8 +16,8 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Jamdocs',
-  siteUrl: 'https://jamdocs.samuelhorn.com',
+  siteName: 'Node SDK',
+  siteUrl: 'https://docs.scenera.net',
   templates: {
     Doc: '/:slug',
   },
