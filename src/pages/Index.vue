@@ -4,9 +4,10 @@
       <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
       <nav>
         <!-- To use other icons here, you need to import them in the Shortcut component -->
-        <Shortcut link="/getting-started" text="Introduction" icon="play-icon" />
-        <Shortcut link="/theme-configuration" text="Configuration" icon="sliders-icon" />
-        <Shortcut link="/theme-configuration#changing-colors" text="Change colors" icon="eye-icon" />
+        <Shortcut link="/general" text="Overview" icon="play-icon" />
+        <Shortcut link="/node-sdk" text="Node SDK" icon="sliders-icon" />
+        <Shortcut link="/ios-app-sdk" text="iOS App SDK" icon="eye-icon" />
+        <Shortcut link="/android-app-sdk" text="Android App SDK" icon="eye-icon" />
       </nav>
     </div>
   </Layout>
@@ -29,7 +30,7 @@ export default {
   },
   data() {
     return {
-      description: 'Scenera Node SDK Documentation'
+      description: 'Documentation'
     }
   },
   metaInfo() {

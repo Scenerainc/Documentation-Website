@@ -1,14 +1,14 @@
 ---
-title: Theme configuration 
+title: Overview
 date: 2018-09-15 07:42:34
-slug: theme-configuration
+slug: android-app-sdk
 ---
 
-## Changing logo
-Since there is a bright and a dark theme in Jamdocs, you will need two logotypes. Just replace the two svg files in `src/assets/img` where the dark on is named `logo-dark.svg` and the bright one is named `logo-bright.svg`. If you can´t provide SVG logos, you can just change the file format to for example PNG in line 5 and 10 `src/components/Logo.vue`.
+## Some sub header 1
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec tincidunt praesent semper feugiat nibh sed. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. Tincidunt lobortis feugiat vivamus at augue eget arcu. Magna eget est lorem ipsum dolor sit amet. Est velit egestas dui id ornare arcu odio. Quam elementum pulvinar etiam non quam lacus. Egestas maecenas pharetra convallis posuere. Pretium quam vulputate dignissim suspendisse in est ante. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Elit eget gravida cum sociis natoque penatibus et magnis. Morbi tincidunt ornare massa eget. Egestas fringilla phasellus faucibus scelerisque. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque.
 
 
-## Adding icons
+## Some sub header 2
 If you need to use icons somewhere in the theme, you can use any icon from [Feather Icons](https://feathericons.com/) as a component. All that is needed is that you import the icon in the component you want to use it like i do it in the theme switcher component:
 
 ```javascript
@@ -22,13 +22,13 @@ export default {
 ...
 ```
 
-And then the icon can be used like this: 
+And then the icon can be used like this:
 
 ```html
 <sun-icon class="sun" />
 ```
 
-## Changing colors
+## 3
 To change the theme colors you need to edit the file `src/assets/scss/config/_colors.scss`. When you open the file for the first time it will look like this:
 
 ```scss
@@ -46,7 +46,7 @@ $textBright: #2a2c2f;
 $brandPrimary: #10c186;
 ```
 
-## Changing font
+## 4
 Jamdocs uses Source Sans Pro by default. I chose to embed the font in the project to increase page speed. To change the font, you just install another Google Font as a dependency, lets say you want Open Sans:
 
 ```bash
@@ -67,7 +67,7 @@ font-family: 'Open Sans', sans-serif;
 
 You're done!
 
-## Edit the sidebar
+## 5
 
 To edit the sidebar, open the file `data/settings.json`. In this file you will find global theme settings as objects and arrays. The sidebar is edit by adding an sections. A section object looks like this:
 

@@ -16,7 +16,7 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Node SDK',
+  siteName: 'Scenera',
   siteUrl: 'https://docs.scenera.net',
   templates: {
     Doc: '/:slug',

@@ -1,24 +1,50 @@
 {
   "sidebar": [
     {
-      "section": "Introduction",
+      "section": "Scenera Documentation",
       "topics": [
         {
-          "title": "Getting started",
-          "slug": "getting-started"
+          "title": "Overview",
+          "slug": "general"
         }
       ]
     },
     {
-      "section": "Setup",
+      "section": "Node SDK",
       "topics": [
         {
-          "title": "Theme configuration",
-          "slug": "theme-configuration"
+          "title": "Overview",
+          "slug": "node-sdk"
         },
         {
-          "title": "Forestry CMS",
-          "slug": "forestry-cms"
+          "title": "Node setup",
+          "slug": "node-setup"
+        }
+      ]
+    },
+    {
+      "section": "iOS app SDK",
+      "topics": [
+        {
+          "title": "Overview",
+          "slug": "ios-app-sdk"
+        },
+        {
+          "title": "iOS app setup",
+          "slug": "ios-app-setup"
+        }
+      ]
+    },
+    {
+      "section": "Android app SDK",
+      "topics": [
+        {
+          "title": "Overview",
+          "slug": "android-app-sdk"
+        },
+        {
+          "title": "Android app setup",
+          "slug": "android-app-setup"
         }
       ]
     }
