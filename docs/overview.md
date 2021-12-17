@@ -4,9 +4,13 @@ date: 2021-11-15 13:25:34
 slug: general
 ---
 
-## Why Scenera
+Scenera is a real-time image analytics platform. Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. The Bridge is a local device, located close to the cameras, or indeed inside of the camera, that selects from the incoming stream based on its settings.
 
-Scenera encodes scenes in a handy datastructure
+Resulting images and clips of movement, or specific detection (e.g. Humans, Vehicles) are sent to the DataPipeline as SceneMarks and SceneData. SceneMarks contain the metadata of a scene, expressed in a JSON structure. SceneData contain the images or video data.
+
+The DataPipeline bundles the SceneMarks and the SceneData, and executes any further AI algorithms through a Node Sequence specified by the configuration of the user. Here the DataPipeline sends off the SceneMarks to any (external) AI Nodes. The AI nodes will send back the SceneMark to the DataPipeline with updated information, and the Pipeline will execute the next node in line.
+
+When the processing has completed, the SceneMark is processed, and the App may retrieve the SceneMarks from the DataPipeline for display.
 
 ## SceneMarks & SceneData
 
