@@ -51,7 +51,7 @@ export default {
 
 .main {
   padding: 100px 30px 30px 30px;
-  max-width: 800px;
+  max-width: 1100px;
   transition: transform .15s ease-in-out;
 
   @include respond-above(sm) {
@@ -72,7 +72,7 @@ export default {
   }
 
   &--sidebar-is-open {
-    transform: translate(300px);
+    transform: translate(250px);
   }
 }
 </style>

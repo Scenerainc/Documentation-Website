@@ -17,7 +17,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Scenera',
-  siteUrl: 'https://docs.scenera.net',
+  siteUrl: 'https://docs.scenera.live',
   templates: {
     Doc: '/:slug',
   },
@@ -43,7 +43,7 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000
+        cacheTime: 10
       }
     }
   ],
