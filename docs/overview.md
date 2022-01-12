@@ -27,79 +27,79 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
 
 ```json
 {
-    "SceneMarkID": "SMK_00000013-60ed-9b3e-8002-000000001951_0001_182a2ae4",
-    "Version": "1.0",
-    "TimeStamp": "2022-07-19T16:25:21.647Z",
-    "NodeID": "00000013-60ed-9b3e-8002-000000001951_0001",
-    "NotificationMessage": "",
-    "SceneMarkStatus": "Active",
-    "VersionControl": {
+    "SceneMarkID": "SMK_00000013-60ed-9b3e-8002-000000001951_0001_182a2ae4", mandatory
+    "Version": "1.0", mandatory
+    "TimeStamp": "2022-07-19T16:25:21.647Z", mandatory
+    "NodeID": "00000013-60ed-9b3e-8002-000000001951_0001", mandatory
+    "NotificationMessage": "", optional
+    "SceneMarkStatus": "Active", optional
+    "VersionControl": { mandatory
         "VersionList": [
             {
-                "VersionNumber": 1.0,
-                "DateTimeStamp": "2022-07-19T16:25:21.647Z",
-                "NodeID": "Bridge"
+                "VersionNumber": 1.0, mandatory
+                "DateTimeStamp": "2022-07-19T16:25:21.647Z", mandatory (TODO: make it so that the pipeline puts it in for you)
+                "NodeID": "Bridge" mandatory
             }
         ]
     },
-    "ThumbnailList": [
+    "ThumbnailList": [ optional
         {
-            "VersionNumber": 1.0,
-            "SceneDataID": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_1b0813e7"
+            "VersionNumber": 1.0, mandatory
+            "SceneDataID": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_1b0813e7" mandatory
         }
     ],
-    "AnalysisList": [
+    "AnalysisList": [ mandatory
         {
-            "VersionNumber": 1.0,
-            "EventType": "ItemPresence",
-            "CustomEventType": "",
-            "AnalysisID": "0001-0002-AI2",
-            "AnalysisDescription": "YOLOv4",
-            "ProcessingStatus": "Detected",
-            "ErrorMessage": "",
-            "TotalItemCount": 1,
-            "DetectedObjects": [
+            "VersionNumber": 1.0, mandatory
+            "EventType": "ItemPresence", mandatory
+            "CustomEventType": "", optional
+            "AnalysisID": "0001-0002-AI2", optional
+            "AnalysisDescription": "YOLOv4", optional
+            "ProcessingStatus": "Detected", mandatory
+            "ErrorMessage": "", optional
+            "TotalItemCount": 1, optional
+            "DetectedObjects": [ optional
                 {
-                    "NICEItemType": "Human",
-                    "CustomItemType": "",
-                    "ItemID": "",
-                    "ItemTypeCount": 1,
-                    "Probability": 0.73,
-                    "Attributes": [
+                    "NICEItemType": "Human", mandatory
+                    "CustomItemType": "", optional
+                    "ItemID": "", optional
+                    "ItemTypeCount": 1, optional
+                    "Probability": 0.73, optional
+                    "Attributes": [ optional
                         {
-                            "VersionNumber": 1.0,
-                            "Attribute": "Mood",
-                            "Value": "Happy",
-                            "ProbabilityOfAttribute": 0.8
+                            "VersionNumber": 1.0, mandatory
+                            "Attribute": "Mood", mandatory
+                            "Value": "Happy", mandatory
+                            "ProbabilityOfAttribute": 0.8 optional
                         }
                     ],
-                    "BoundingBox": {
-                        "XCoordinate": 10,
-                        "YCoordinate": 30,
-                        "Height": 10,
-                        "Width": 10
+                    "BoundingBox": { optional
+                        "XCoordinate": 10, mandatory
+                        "YCoordinate": 30, mandatory
+                        "Height": 10, mandatory
+                        "Width": 10 mandatory
                     },
-                    "RelatedSceneData": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_e4041246"
+                    "RelatedSceneData": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_e4041246" mandatory
                 }
             ]
         }
     ],
-    "SceneDataList": [
+    "SceneDataList": [ optional
         {
-            "VersionNumber": 1.0,
-            "SceneDataID": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_1b0813e7",
-            "TimeStamp": "2022-07-19T16:25:21.647Z",
-            "SourceNodeID": "00000013-60ed-9b3e-8002-000000001951_0001",
-            "SourceNodeDescription": "Scenera Bridge",
-            "DataType": "Thumbnail",
-            "Status": "Upload in Progress",
-            "Encryption": {},
-            "MediaFormat": "JPEG",
-            "Resolution": {
-                "Height": 100,
-                "Width": 100
+            "VersionNumber": 1.0, mandatory
+            "SceneDataID": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_1b0813e7", mandatory
+            "TimeStamp": "2022-07-19T16:25:21.647Z", optional
+            "SourceNodeID": "00000013-60ed-9b3e-8002-000000001951_0001", mandatory
+            "SourceNodeDescription": "Scenera Bridge", optinoal
+            "DataType": "Thumbnail", mandatory
+            "Status": "Upload in Progress", mandatory (does the datapipeline set this?)
+            "Encryption": {}, optional
+            "MediaFormat": "JPEG", optional
+            "Resolution": { optional
+                "Height": 100, mandatory
+                "Width": 100 mandatory
             },
-            "SceneDataURI": "https://example.scenedata.uri/thumbnail.jpeg"
+            "SceneDataURI": "https://example.scenedata.uri/thumbnail.jpeg" mandatory
         },
         {
             "VersionNumber": 1.0,
