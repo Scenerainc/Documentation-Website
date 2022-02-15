@@ -10,6 +10,24 @@
       ]
     },
     {
+      "section": "Account Service Documentation",
+      "topics": [
+        {
+          "title": "Account Service",
+          "slug": "account-service"
+        }
+      ]
+    },
+    {
+      "section": "Controller Documentation",
+      "topics": [
+        {
+          "title": "Controller",
+          "slug": "controller"
+        }
+      ]
+    },
+    {
       "section": "Node SDK",
       "topics": [
         {
