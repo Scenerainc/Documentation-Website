@@ -65,6 +65,15 @@
           "slug": "android-app-setup"
         }
       ]
+    },
+    {
+      "section":"Controller Documentation",
+      "topics": [
+        {
+          "title":"Controller",
+          "slug":"controller"
+        }
+      ]
     }
   ]
 }
