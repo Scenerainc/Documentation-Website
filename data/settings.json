@@ -10,6 +10,15 @@
       ]
     },
     {
+      "section": "Bridge Documentation",
+      "topics": [
+        {
+          "title": "Overview",
+          "slug": "scenera-bridge-library"
+        }
+      ]
+    },
+    {
       "section": "Account Service Documentation",
       "topics": [
         {
