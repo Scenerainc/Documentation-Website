@@ -10,6 +10,32 @@
       ]
     },
     {
+      "section": "Node SDK",
+      "topics": [
+        {
+          "title": "Overview",
+          "slug": "node-sdk"
+        },
+        {
+          "title": "Node setup",
+          "slug": "node-setup"
+        }
+      ]
+    },  
+    {
+      "section": "Android App",
+      "topics": [
+        {
+          "title": "Android App Setup",
+          "slug": "android-app-setup"
+        },
+        {
+          "title": "Send SceneMarks Through the App",
+          "slug": "android-app-scenemarks"
+        }
+      ]
+    },      
+    {
       "section": "Bridge Documentation",
       "topics": [
         {
@@ -37,19 +63,6 @@
       ]
     },
     {
-      "section": "Node SDK",
-      "topics": [
-        {
-          "title": "Overview",
-          "slug": "node-sdk"
-        },
-        {
-          "title": "Node setup",
-          "slug": "node-setup"
-        }
-      ]
-    },
-    {
       "section": "iOS app SDK",
       "topics": [
         {
@@ -59,19 +72,6 @@
         {
           "title": "iOS app setup",
           "slug": "ios-app-setup"
-        }
-      ]
-    },
-    {
-      "section": "Android app SDK",
-      "topics": [
-        {
-          "title": "Overview",
-          "slug": "android-app-sdk"
-        },
-        {
-          "title": "Android app setup",
-          "slug": "android-app-setup"
         }
       ]
     }
