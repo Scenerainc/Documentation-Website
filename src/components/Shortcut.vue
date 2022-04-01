@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { ArchiveIcon, BoxIcon, CpuIcon, ServerIcon, FileTextIcon, TerminalIcon, BookOpenIcon, GridIcon } from 'vue-feather-icons'
+import { ArchiveIcon, BoxIcon, CpuIcon, ServerIcon, CropIcon, TerminalIcon, BookOpenIcon, GridIcon } from 'vue-feather-icons'
 
 export default {
   components: {
@@ -18,7 +18,7 @@ export default {
     BoxIcon,
     CpuIcon,
     ServerIcon
-    FileTextIcon, 
+    CropIcon, 
     TerminalIcon, 
     BookOpenIcon, 
     GridIcon 
