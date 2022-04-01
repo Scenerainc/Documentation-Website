@@ -10,14 +10,18 @@
 </template>
 
 <script>
-import { ArchiveIcon, BoxIcon, CpuIcon, ServerIcon } from 'vue-feather-icons'
+import { ArchiveIcon, BoxIcon, CpuIcon, ServerIcon, CropIcon, TerminalIcon, BookOpenIcon, GridIcon } from 'vue-feather-icons'
 
 export default {
   components: {
     ArchiveIcon,
     BoxIcon,
     CpuIcon,
-    ServerIcon
+    ServerIcon,
+    CropIcon, 
+    TerminalIcon, 
+    BookOpenIcon, 
+    GridIcon 
   },
   props: {
     link: {
