@@ -6,8 +6,11 @@
         <!-- To use other icons here, you need to import them in the Shortcut component -->
         <Shortcut link="/general" text="Overview" icon="archive-icon" />
         <Shortcut link="/node-sdk" text="Node SDK" icon="box-icon" />
-        <Shortcut link="/ios-app-sdk" text="iOS App SDK" icon="cpu-icon" />
-        <Shortcut link="/android-app-sdk" text="Android App SDK" icon="server-icon" />
+        <Shortcut link="/scenera-bridge-library" text="Bridge" icon="cpu-icon" />
+        <Shortcut link="/android-app-setup" text="Android App SDK" icon="terminal-icon" />
+        <Shortcut link="/ios-app-sdk" text="iOS App SDK" icon="book-open-icon" />
+        <Shortcut link="/controller" text="Controller" icon="grid-icon" />
+        <Shortcut link="/account-service" text="Account Service Documentation" icon="file-text-icon" />
       </nav>
     </div>
   </Layout>
