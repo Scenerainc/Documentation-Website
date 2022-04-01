@@ -17,7 +17,7 @@ export default {
     ArchiveIcon,
     BoxIcon,
     CpuIcon,
-    ServerIcon
+    ServerIcon,
     CropIcon, 
     TerminalIcon, 
     BookOpenIcon, 
