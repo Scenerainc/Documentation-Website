@@ -1,4 +1,4 @@
-
+# Testing Netlify branch policies #
 # ![SceneraLogo](https://github.com/Scenerainc/Documentation-Website/blob/main/src/assets/img/logo-dark.svg)
 
 Scenera's documentation website. hosted by *Jamdocs*
