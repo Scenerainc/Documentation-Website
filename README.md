@@ -1,5 +1,5 @@
 
-# ![SceneraLogo](https://github.com/Scenerainc/Documentation-Website/blob/dev/src/assets/img/logo-dark.svg)
+# ![SceneraLogo](https://github.com/Scenerainc/Documentation-Website/blob/main/src/assets/img/logo-dark.svg)
 
 Scenera's documentation website. hosted by *Jamdocs*
 For help formatting the website, visit [The Jamdocs Documentation Website](https://jamdocs.netlify.app/)
