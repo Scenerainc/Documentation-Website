@@ -6,10 +6,10 @@ slug: general
 
 **This page is under construction**
 
-> TODO: add schemalink
-> TODO: add types of all fields
-> TODO: add whether any fields are required
-> TODO: add diagram that explains the layout
+* TODO: add schemalink
+* TODO: add types of all fields
+* TODO: add whether any fields are required
+* TODO: add diagram that explains the layout
 
 Scenera is a real-time image analytics platform. Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. **The Bridge** is a local device, located close to the cameras, that selects from the incoming video-stream based on its settings.
 

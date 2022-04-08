@@ -3,7 +3,7 @@
 Scenera's documentation website. hosted by *Jamdocs*
 For help formatting the website, visit [The Jamdocs Documentation Website](https://jamdocs.netlify.app/)
 
-## Updates to the *dev* branch will automatically be pushed to the [Development documentation site](https://dev--docs.scenera.live/)
+## Updates to the *dev* branch will automatically be pushed to the [Development documentation site](https://dev--sceneradocumentation.netlify.app/)
 ## Create a pull request from *dev* to *main* to automatically release updates to the [production documentation website](https://docs.scenera.live/)
 
 

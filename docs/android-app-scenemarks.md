@@ -23,7 +23,7 @@ INSERT CODE SNIPPET HERE
 
 ### 1. Link BSS Account to App ###
   * The first step is to link your BSS account with the Android Application. Call the library’s *BSSLoginActivity.class* like the following example:
-```
+```java
 Intent intent = new Intent(MainActivity.this, BSSLoginActivity.class);
 startActivityForResult(intent, MY_REQUEST_CODE);
 ```
@@ -43,13 +43,13 @@ startActivityForResult(intent, MY_REQUEST_CODE);
   * After successful BSS login, the next step is to get the scene mode.
   * The *MainViewModel.class* ﬁle contains all the API calling functions which developers will need.
   * To call the *sceneMode* API, first create an instance of MainViewModel Class:
-  ```
+  ```java
   MainViewModel mainViewModel;
   // Get the ViewModel.
   mainViewModel = new ViewModelProvider(this).get(MainViewModel.class;
   ```
   * Then, call the scene mode API:
-  ```
+  ```java
   mainViewModel.getSceneMode(this);
   ```
   * Get the response string of the sceneMode by implementing an observer for each API function call.
@@ -67,7 +67,7 @@ startActivityForResult(intent, MY_REQUEST_CODE);
   * After successfully getting *scenemode*, upload the scenemark using the following steps:
   * Note: the *MainViewModel.class* ﬁle contains all the API calling functions you will use
   * To call API's for uploading *scenemarks*, you first must create ab instance of the *MainViewModel* Class as follows:
-  ```
+  ```java
   MainViewModel mainViewModel;
   // Get the ViewModel.
   mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
@@ -75,55 +75,57 @@ startActivityForResult(intent, MY_REQUEST_CODE);
   * Then, call the API's in the following sequence:
   1. Clear the list of Objects to be used for a SceneMark:
     * Call the *clearDetectedObjects* api as follows:
-    ```mainViewModel.clearDetectedObjectList(this)```
+    ```java
+    mainViewModel.clearDetectedObjectList(this)
+    ```
   2. Update the detected objects in a scene by calling the following function for every object detected in an image:
     * Call the *updateDetectedObjects* API as follows:
       * In the  &lt;encodedImage\> parameter, you must pass an image in Base64 encoded string format. This thumbnail image will be uploaded in the scenemark.
-    ```
+    ```java
     mainViewModel.updateDetectedObjectList(this,encodedImage,label_text,probability,xmin,xmax,ymin,ymax);
     ```
     * For Example:
-    ```
+    ```java
     mainViewModel.updateDetectedObjectList(this,encodedImage,"Human",1,30,40,50,40, 30,40);
     ```
 ### 3. Update the SceneDataID ###
   * If a new Video recording is started with this SceneMark, then the SceneDataID for the Video must be updated
   * Call the *createVideoScenedataID* API as follows where &lt;VideoDurationSec\> how long the video will be (in seconds):
-  ```
+  ```java
   mainViewModel.createVideoSceneDataID(this,VideoDurationSec,VideoWidth, VideoHeight);
   ```
   * For Example:
-  ```
+  ```java
   mainViewModel.createVideoSceneDataID(this,60,0,0);
   ```
 
 ### 4. Send the SceneMark ###
   * Call the *sendScenemark* API as follows to create a scenemark and upload thumbnail image
 in scenemark:
-```
+```java
 mainViewModel.sendSceneMark(activity);
 ```
 
 ### 5. Send Full-Image SceneData ###
   * Call the *sendFullImageScenedata* API. In the &lt;encodedImage\> parameter, you must pass an image in Base64 encoded string format. This is the full image to be uploaded in scenemark.
-  ```
+  ```java
   mainViewModel.SendFullImageSceneData(activity,encodedImage);
   ```
 
 ### 6. Create and Upload Video SceneData ###
   * Call the *sendVideoScenedata* API. In the &lt;encodedVideo\> parameter, you must pass video in Base64 encoded string format
     * If the video is small enough, you can just send the full video using:
-    ```
+    ```java
     iChunkNumber = 1
     iNumberOfChunksToUse = 1
     ```
 
-  ```
+  ```java
   mainViewModel.SendVideoSection(activity,encodedVideo,iChunkNumber,iNumberOfChunksToUse);
   ```
 
   * For Example:
-  ```
+  ```java
   mainViewModel.SendVideoSection(activity,encodedVideo,1,1);
   ```
 

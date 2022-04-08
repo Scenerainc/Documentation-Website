@@ -10,7 +10,7 @@ slug: android-app-setup
 1. To use JitPack with private repositories get your personal access token to use the library in your project.
   * For this example, we will use this as our access token: ``` jp_dbku18oktekp0aj72fgv9h9bm2 ```
 2. Use this access token as the &lt;username\> in your project’s *build.gradle* file like:
-```
+```java
 allprojects {    
    repositories {    
        google()   
@@ -26,7 +26,7 @@ allprojects {
 3. Add the Library dependency in your module’s *build.gradle* file:
   * This is the sample library :```implementation 'com.github.awajs:appsecuritysdk:<Tag>'```
     * Note: &lt;Tag\> will be the latest version name of the library
-```
+```java
 dependencies {    
    implementation fileTree(dir: 'libs', include: ['*.jar'] ) 
    implementation 'com.github.awajs:appsecuritysdk:v6.2'   
@@ -39,13 +39,13 @@ dependencies {
 
 ### 1. Link BSS Account to App ###
   * The first step is to link your BSS account with the Android Application. Call the library’s *BSSLoginActivity.class* like the following example:
-```
+```java
 Intent intent = new Intent(MainActivity.this, BSSLoginActivity.class);
 startActivityForResult(intent, MY_REQUEST_CODE);
 ```
   * After successful login, the *AppSecurityObject* and *AppControlObject* will be added to the library’s shared preference variables which you can now use further in the project
   * Once login is successful, redirect from the library’s activity to the developer’s activity to perform next steps. For example:
-  ```
+  ```java
 @Override   
 protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {   
    super.onActivityResult(requestCode, resultCode, data);   
@@ -60,7 +60,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 
   * Here, *HomeActivity.class* is the app developer’s activity to redirect the user after successful login from library’s activity
   * Here's an example of the developer’s *BSSLoginActivity*:
-  ``` 
+  ```java
 public class MainActivity extends BaseActivity {    
  
     private final static int MY_REQUEST_CODE =  1;    
@@ -90,18 +90,18 @@ public class MainActivity extends BaseActivity {
   * After successful BSS login, the next step is to get the node list.
   * The *MainViewModel.class* ﬁle contains all the API calling functions which developers will need.
   * To call the *nodeList* API, first create an instance of MainViewModel Class:
-  ```
+  ```java
   MainViewModel mainViewModel;
   // Get the ViewModel.
   mainViewModel = new ViewModelProvider(this).get(MainViewModel.class;
   ```
   * Then, call the node listing API:
-  ```
+  ```java
   mainViewModel.getNodeList(this);
   ```
   * Get the response string of the node list by implementing an observer for each API function call.
   * To update UI for node list and get the response from library API call, call the observer:
-  ```
+  ```java
 mainViewModel.getDeviceList().observe(activity, new Observer<ArrayList<NodeList>>(){   
     @Override   
     public void onChanged(ArrayList<NodeList> nodeLists) {   
@@ -119,11 +119,11 @@ mainViewModel.getDeviceList().observe(activity, new Observer<ArrayList<NodeList>
 ### 3. GetNICEItemTypes ###
   * After getting *NodeLists*, call the API to list all *NiceItemTypes*
   * Call the *NiceItemTypes* API as follows:
-  ```
+  ```java
   mainViewModel.getNiceItemTypesList(this);
   ```
   * To update the UI for *niceitemtypes* list, and get the response from the library API call, call the observer like this:
-  ```
+  ```java
 mainViewModel.getNiceItemTypes().observe(HomeActivity.this, new Observer<ArrayList<String>>() 
 {   
     @ Override   
@@ -140,7 +140,7 @@ mainViewModel.getNiceItemTypes().observe(HomeActivity.this, new Observer<ArrayLi
 ### 4. GetSceneMarkManifest ###
   * After getting  *NiceItemTypes* call the API to list the first 10 *SceneMarkManifest* objects
   * These are the Parameter definitions for the *GetSceneMarkManifest* Service:
-```  
+```  json
   "NodeIDs": {  
     "type": "array",  
     "description": "All the devices available in bss account"  
@@ -157,21 +157,21 @@ mainViewModel.getNiceItemTypes().observe(HomeActivity.this, new Observer<ArrayLi
     "type": "integer",  
     "description": "specifies limit to list total scenemarks"  
   }  
-  ReturnNICEItemTypes": {  
+  "ReturnNICEItemTypes": {
     "type": "boolean",  
     "description": "set it to true for listing all the available niceItems" 
   }  
-  "ReturnSceneMarkDates": {  
+  "ReturnSceneMarkDates": {
     "type": "boolean",  
     "description": "set it to true for listing all the available dates on which scenemarks  available"  
   }  
-  ReturnPage": {  
+  "ReturnPage": {  
     "type": "boolean",  
     "description": "set it to true for listing all the available scenemarks for specified  pagelength. also can use ReturnPage to get the next page. set it to false to get full list"  
   }  
   "ListNICEItemTypes": {  
     "type": "array",  
-    "description": "NICE defines diferent DeviceModes which target specific types of data  associated with the DeviceMode."  
+    "description": "NICE defines diferent DeviceModes which target specific types of data  associated with the DeviceMode.",
     "NICEItemTypesPresent": {  
       "type": "string",  
       "enum": [  
@@ -183,7 +183,7 @@ mainViewModel.getNiceItemTypes().observe(HomeActivity.this, new Observer<ArrayLi
         "Text/Logo>QRCode",  
         "Animal"  
     ]  
-  }  
+  },
   "ContinuationToken": { 
     "type": "string",  
     "description": "token to get next scenemarks for next page"  
@@ -191,7 +191,7 @@ mainViewModel.getNiceItemTypes().observe(HomeActivity.this, new Observer<ArrayLi
 ```
  
   * call the *SceneMarksManifest* API:
-  ``` 
+  ```java
 private void getSceneMarksManifest(){   
     mainViewModel.getSceneMarksManifest(activity, nodeIdArrayList, "2010-08-25T03:17:53.1179276Z", "2022-03-31T03:17:53.1179276Z", 10, true, true, true, selectedNiceItemList, null);   
 } 
@@ -199,7 +199,7 @@ private void getSceneMarksManifest(){
 **When calling ContinuationToken shell for the first time, pass a null value.**
 **Not sure what this means?**
   * To get the response of SceneMarksManifest from the library API call, call the observer:
-  ```
+  ```java
 mainViewModel.getSceneMarkManifestLiveData().observe(getViewLifecycleOwner(), new Observer<GetSceneMarkManifestResponse>() {   
     @Override   
     public void onChanged(GetSceneMarkManifestResponse getSceneMarkManifestResponse) 
@@ -214,7 +214,7 @@ mainViewModel.getSceneMarkManifestLiveData().observe(getViewLifecycleOwner(), ne
   * Here, the  *getSceneMarkManifestLiveData()* function will return a list of *sceneMarksManifest*s
   * The *ContinuationToken* must be saved in your code and passed to every subsequent page request call for *sceneMarksManifest*s.
   * For example, to load the next 10 *sceneMarksManifest*s after the user scrolls past 10 scenemarks, the API request call will look like this:
-  ```
+  ```java
 private void getSceneMarksManifest(){   
     mainViewModel.getSceneMarksManifest(activity, nodeIdArrayList, "2010-08-25T03:17:53.1179276Z", "2022-03-31T03:17:53.1179276Z", 10, true, true, true, selectedNiceItemList, continuationToken);
 }   
@@ -222,7 +222,7 @@ private void getSceneMarksManifest(){
   * Here, the *ContinuationToken* saved in the first request call should be passed. It will return in the response of the *GetSceneMarkManifest* API call.
 
   Sample response of GetSceneMarksManifest api call:
-  ```
+  ```json
   {  
   "Version": "1.0",   
   "StartDateTime": "2010-08-25T03:53.117Z",   
@@ -238,8 +238,7 @@ private void getSceneMarksManifest(){
     {  
     "SceneMarkID": "SMK_00000001-5cdd-280b-8002-00010000f3e0_0001_00064c9a",    
     "NodeID": "00000001-5cdd-280b-8002-00010000f3e0_0001" ,  
-    "SceneMarkURI": "https://stagingenvnodesequencer.scenera.live/1.0/00000001-5e84-224c-8003- 
-    000000000065/GetSceneMark/SMK_00000001-5cdd-280b-8002-00010000f3e0_0001_00064c9a",   
+    "SceneMarkURI": "https://stagingenvnodesequencer.scenera.live/1.0/00000001-5e84-224c-8003-000000000065/GetSceneMark/SMK_00000001-5cdd-280b-8002-00010000f3e0_0001_00064c9a",   
     "TimeStamp" : "2021-01-15T03:51:19.863Z",   
     "SceneDataThumbnail": {  
       "SceneModeDetectionType": "Human" ,  
@@ -249,25 +248,18 @@ private void getSceneMarksManifest(){
     }  
   }  
   ],  
-  "ContinuationToken": "[{\"token\":\"+RID:~3ts2AIVXTRVV7AAAAAAAAQ==#RT:1#TRC:1#RTD:pInRkQDE/WRQPdWYJzqRBTMxMzIuMTIuMjZVMTQ7NjI7MjovOTc0WwA=#ISV:2#IEO:65551#QCF:1#FPC:AggAAAAAAAAAAAIAAAAAMAAAAAAAAAAAAAAKAQHAMgBzBADgs/P37yZD/4BMAABgXQABEACCZUP/D//eGfi7iJ8DJwB/AATwv14C5g8APhIANi0AA3wBOMYDEAH/+VcAGY8PEDTgONTABxBc8D8fAAEeAYP/QbSxB+GQEc//AAU8fgB4BDD8OJxfvfjxfBfAIBheAAC2f3gAkOfQUzA8mA0oYzEyBDAAnxx4OPz/gEDAAXg4+BEH+Af8N+ANQEAAEUA//0ZAER/8CfqXfw/IP57/Z0D/f/vHvzd2vBEW9Hj8PxtAf/y+tYHmd/8+gT/AHwC//v9GYPr+LxdAf7/31R/7+v/f/uf/9/8SQPvn7//EQP8AAN4f/iEAQgCABwcAgib+/z8AAgAAAAAAAABoAPEdf/9UQb/uI97j9/n/sUH/vyFD/w8zgCOC5IBCAMD/fwBKg2EA4H93gJ+A7oEigAeAcQAPAIeAvoAwgJKAjYCugEEA8CcVgJKAq4AygNeA1IBBAABgF4CZgOWB14CugJiAmoCdgI+CAwAAAAAAAAAoAbSApoAxAf993YCRgCOA2IAogTCBLIKOgCyAoYDTgdIAAPDr/zFA/394gJKAUQDgP6SAD4ABwP8AMYBxAMABP4BxAID/voCbgJOAqICegF2A9BkA9L/v//ff/xFA/d8SQP/W//4WQLfr/9j+7/2f/+/+/hNA/8/7/vf/GED+9/+7u/eX/9/9//37/vf/PUD/X/v2/5v7/f7+53fr///vf/f/s1/ebv/9/yJA//d//xRAv9/+/f3/v+8SQP3///cZQP/3939/7//f/9d//v+/hfvt7xVA/3///v9+/59/fiZA9fv7//93/r//f/7/cUADABKATIBZgFeA3IAvgF2AW4BYgFKAU4BRgE+AXIBUgE2AXIBWgFWAMQD8/1FA/wFSgI+AMYBxASgABAAAAAAAAAAIAWqAooAmgFeAVYBPgF+AXoBagFqAIYApgBEAgP8TQcMfI/ADACUA4IbDDzQAAKAGAEMAAMABAAA8EwAAzwHB7g4TAAD4BwDw2BIAMHwPABIAPOABAC8A5AIA7HtNeOGGAx4AHgQAH/AAAIA/AIAPIAAEPHweBsBgDwAAAPAfP6wAgABPgBPAgP8/BsASDhpAIOHB+APPAEAAEAEEAB4QHBYGgDKYLwAQ4LEDABsZgA/ABB4ADCADAgQih37ADCBggAoAgIcCgAA0EALAAgjwe0D/Y+ADABzAvz/8YPj/  
-  vEcAAAZ6AAcCNADsJwDwH4ACPhIAABgAgIJA/wAgALMAwH//HwAQIQAPAAkAAAAAAAAAAgBcogoAAAAAAAAAJADyJFANAP8xQD8AOYctgAHAAEHkgyOAIgAA/AcAQg0g/Pj/cEELAAAAAAAAAHQAAsDPAP7/mED/P6IAACSItACAAAHA/x8AIQAAKCMAAMABAAkAIQAAGhNA/wAAxgEAFACAAf7//wDg/yFAPwMSAED+BwAxAAL4IUA/AJ6AEQAA/3FCDwBXgSSAAcAAUbaARIBIgSiAZ4DFg0iAoQOA/xFBfwAMAAAAAAAAAEIAERcA8MFA/wCSBADA/wd/iwHAHwDIgSEF/AELgcEBgAfRBAAGwQEACgEBAB8xAAgEG4AagDMAAUQAAQEA/YEBwP8BDQAAAAAAAAAiANyAAcBBABKABIDSCID//wB+gYWDA4ali/ICAPABAH+I7ZIOAAAAAAAAABgAtIVxAgBwSIARgCCAYRx+ADIOAPh/AKWFDwAAAAAAAAAGAFuSAcBQABAAAAAAAAAABABxJhgAEQAAAAAAAAAGADqH4TYAYBIAAAAAAAAAEgB7l3 
-  WAgIDwgB+ARYwyCQDgAQATAAAAAAAAAAQAoSUHABQAAAAAAAAABACmhRiAAAAAAAAEAABuAAnA/v8/ 
-  gABgYwjGzNr///0BAAQATYHJgCEEAD8RACQAQIBhgOKBcgIA8AEAUQESAlEAECBMgQGAbIEQgKCAQgIA/ 
-  wEAVoAGgrEAAMARQP8fEgAASBIAYQD8H+QATgIAQBAACABbgJEA/v+RQgEAAQAAAAAEAAAKALEVAAdiAwD8/ 
-  w8CAAAAAAQAAPQAwTKA/xxAHwAAgPF4B/A9P7ydnw/j3Csbif3JwUwCMQMYARCABcAQHAEAAIAGAAB0GYANwAEBAIAgAQAAAJgGBoIgMBAIAAMLAIAAAABgIQAAOBYAg 
-  AMgAACAC0AAAQEAGIACgBEAPwBYgACAB8AQhQYACAAAgAEAdocBADmAsQCAASEAANhRADgAEQAFADIAADgADMSAWwAA4M3ia+Sz+D3n5zezfJ+9r8nf45//H0C/n3+b3f+z/f/b/f//0+Df/v9/z//j4XBLkQH5gjESwMfv75IVgw85P94B2ZNhdTC4cA6CwwHH/C6ftbv+O2//e/7f/QMAAAAABAAAWgIswK/ 
-  P9mEECEDEvFQMAAAwIAAyBACLh28I7XU4j8T/ZryPfYEcHGgR8BbCwQFNHVcn/7b5f/r/7b///a+2P9ObZ///cwcI8+8Nx3d+fvx+43/+bPd79+PHAAdhAOAFKABwAAAoiAAYAAAyAgDEAAQgEIACgAuALwACCEDABgAAEBAIAAEEIAgQAIB2ZmwJ/fP3utX/+/9xwH///99vn//81w+YP4//NwD46YzPPaHe7M7m8OG/v/Lx97v/2v5+3jgB+OcsK7MPHv+Y8fPzkef7/C/MLoOXkyhABD0gXME0X0RgECjg0eOk/zvf/Pyv///90e15X3Z0HV84HkgG4HzN5gPz3taxR0TuCJqqDwwykbONyS+gIQACSHYB7IHHweL5z/unur933fvnv3zfu//D/nzH9nDbg+F2R5CDkR3Yv/f/3/od9qOHff/9u//3//f/9P///m9+/////+99971/nPMB+3v9/fn/u//3G/9/+7+O7v33/73//+cvQOMP8/3/H+fbr///r6YXe2qy1btZ9ns///PbXn4vHxDAp/u8//zl+fv/G//6oHetbu/v7//77/9///9/+/vPzAfuBHD/+9u/7/e3//nM7w13/++/7/9/af6ffZ5e9e4SQP/8/AejFgCbp+/5/8dBX0AADjBvIsb/ZwMPHxs/ABzuHyT8tg53Hvj7h10PDgfwAAGK6OPIGAwOpAHkwA7AGAAcCXcCOoz7Hb7LgItBAgAACIDHfwEAAzjg/yBAIQAA4MFA/x9BAADAWkCfjoclvF2cb/W+/2P/e4AAwL8BAAAAAAAAIAAAAgC1hAAAAAAAMAAACAAypASAAcABCAEAAAAAMAAADACri6EUAH/IghOABoACAAAAADAAAC4AsSMA+CFAAQAxA8D/EUD/PxEB4P9xQH8A0QH8//FA+/+jQAcAAHz8/3JA/w7+AA==\",\"range\":{\"min\":\"05C1BDD37D7BE0\",\"max\":\"05C1CB337B2DC0\"}}]" } 
+  "ContinuationToken": "[{\"token\":\"+RID:~3ts2AIVXTRVV7AAAAAAAAQ==#RT:1#TRC:1#RTD:pInRkQDE/WRQPdWYJzqRBTMxMzIuMTIuMjZVMTQ7NjI7MjovOTc0WwA=#ISV:2#IEO:65551#QCF:1#FPC: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\",\"range\":{\"min\":\"05C1BDD37D7BE0\",\"max\":\"05C1CB337B2DC0\"}}]" } 
   ```
 
 ### 5. GetSceneMark ###
   * After getting the *GetSceneMarksManifest* list, make a &lt;GET> call for SceneMarks and SceneData.
   * Retreive the *SceneMarkURI* from the *GetSceneMarksManifest* API call response.
   * Call the *SceneMarks* API as follows: 
-  ```
+  ```java
   mainVM.getLiveSceneMarks(activity, sceneMarkURI)
   ```
   * To get the response of *SceneMarks* from the API call, call the observer:
-  ```
+  ```java
 mainVM.getAlertLiveData().observe(getViewLifecycleOwner(), new Observer<SceneMarkResponseCMF>() {   
     @Override   
     public void onChanged(SceneMarkResponseCMFsceneMarkResponseCMF){   
@@ -277,7 +269,7 @@ mainVM.getAlertLiveData().observe(getViewLifecycleOwner(), new Observer<SceneMar
   ```
   * Here, the *getAlertLiveData()* function from the library will return *SceneData* information.
   * Sample *SceneData* Response:
-  ```
+  ```json
   {
   "Version": "1.0",   
   "TimeStamp" : "2021-01-15T03:51:19.863Z",   
@@ -455,12 +447,12 @@ mainVM.getAlertLiveData().observe(getViewLifecycleOwner(), new Observer<SceneMar
   * Save the &lt;SceneEncryptionKeyID\> locally inside the app to decrypt and display images and video
   * Use the the &lt;SceneEncryptionKeyID\> to get the encryption key from the service.
   * Call for *GetPrivacyObject* API as follows:
-  ```
+  ```java
   mainViewModel.getPrivacyObject(this,"2021-01-19T09:34:50.353Z","0000000000001");
   ```
   * In response, the library will save *iv* and *key* in preference variables which can be used to decrypt video and images using AES CTR algorithm.
   * Sample response of *GetPrivacyObject* API call:
-  ```
+  ```json
   {
   "Version": "1.0",   
   "MessageType": "response",   
@@ -499,7 +491,7 @@ mainVM.getAlertLiveData().observe(getViewLifecycleOwner(), new Observer<SceneMar
 ### 7. GetAppControlObject ###
   * Call *getAppControlObject* anytime to refresh the token.
   * Call the *GetAppControlObject* API as follows:
-```
+```java
 mainViewModel.getAppControlObject(this,Helper.getAppSecurityObject(),"2021-01-19T09:34:50.353Z");
 ```  
   * In response, the library will update the *appControlObject* in library’s preference
@@ -511,7 +503,7 @@ mainViewModel.getAppControlObject(this,Helper.getAppSecurityObject(),"2021-01-19
   * If **"DataType": "RGBStill"**, **"MediaFormat": "JPEG"** and **"EncryptionOn": true** inside *SceneData*, then Images are Encrypted.
   * Use the *DownloadImage* class from the library which will return a decrypted image bitmap that you can use in your UI.
   * This is an example of how to get the decrypted image from library :
-```
+```java
 DownloadImage task = new DownloadImage();   
 Bitmap bitmap = null;    
 try {
@@ -526,7 +518,7 @@ try {
   * If **"DataType": "RGBVideo"**, **"MediaFormat": "H.264"** and **"EncryptionOn": true**inside *SceneData*, then the Video is Encrypted.
   * Use the *DownloadVideo* class from the library to download, save locally, and decrypt video from the uri.
   * The following example shows how to get the decrypted video from the library :
-  ```
+  ```java
 DownloadVideo downloadVideo = new DownloadVideo();   
 try {    
     downloadVideo.playvideo(strUrl);   
@@ -541,7 +533,7 @@ try {
 ### 10. Encrypt Image or Video: ###
   * The *EncryptData* class from the library will return encrypted data in a byte array. Use the encoded byte array in Base64 String. **Not sure what this means**
   * The following example shows how to get the encrypted data from the library:
-  ```
+  ```java
 if(fIsImageEncrypted){
     byte[] binImage = androi.util.Base64.decode(base64Image, android.util.Base64.DEFAULT);
     EncryptData encryptData = new EncryptData(context);
