@@ -11,13 +11,56 @@ slug: general
 * TODO: add whether any fields are required
 * TODO: add diagram that explains the layout
 
-Scenera is a real-time image analytics platform. Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. **The Bridge** is a local device, located close to the cameras, that selects from the incoming video-stream based on its settings.
+Scenera is a real-time IoT analytics platform. It allows devlopers to process, analyze, encrypt, and store data from cameras or other IoT sensors, and receive the results on a mobile or web application. With all it's complexity and pieces, we've built this guide to help explain the system from end to end.
+
+Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. **The Bridge** is a local device, located close to the cameras, that selects from the incoming video-stream based on its settings.
 
 Resulting images and clips of movement, or specific modes of detection (e.g. Humans, Vehicles) are sent to the **DataPipeline**, as SceneMarks and SceneData. SceneMarks contain the metadata of a scene, expressed in a JSON structure. SceneData contain the images or video data.
 
 The DataPipeline bundles the **SceneMark**s and the **SceneData**, and executes any further AI algorithms through a Node Sequence specified by the configuration of the user. Here the DataPipeline sends off the SceneMarks to any (external) AI Nodes. The **AI nodes** will send back the SceneMark to the DataPipeline with updated information, and the Pipeline will execute the next node in line.
 
 When the processing has completed, the SceneMark is processed, and the **App** may retrieve the SceneMarks from the DataPipeline for display.
+
+Let's define some key terms:
+
+## Key Terms
+### SceneMarks (SMKs)
+- The SceneMark is Scenera's fundamental data structure, used to transmit metadata from the sensors. Scenemarks are JSON files that are passed around the entire platform, and carry all important information about what the system is seeing. How many people are in a frame? What time was a vehicle detected? Did an intruder enter my house while I was gone? All of this information and more is contained within a SceneMark. Please note that no actual PII, video footage, or images are stored in SceneMarks, just URLs and metadata. We will go much further in-depth about this data structure below.
+
+### SceneData
+- This is the raw data. Images, video clips, temperature readings, volume levels, audio recordings, all of these are examples of SceneData. These are stored separately from SceneMarks because they are inherently full of PII. Scenera's philosophy of "Zero-Image Surveillance" seeks to draw conclusions from the SceneMark, not the SceneData. 
+
+### The Bridge
+- This is a processor that connects the data source (i.e camera, thermometer, or other sensor) to our platform. It must convert raw data into SceneMarks and SceneData, then securely send those SMKs and SceneData to our DataPipeline[link]. The bridge also can conduct AI analysis, though not necessarily. It is written in Python. Learn more about the Bridge here.[link]
+
+### Bridge Nodes
+- When processing data streams, each IoT Device that connects to a bridge is called a Node. For example, if one bridge is processing 8 cameras then that Bridge has 8 **Nodes**, each with a unique identifier. The more powerful a Bridge processor is, the more nodes it can handle. Do not confuse bridge nodes with AI nodes (we're sorry about this).
+
+### SceneModes
+- This is a data structure that the Business Support System (BSS) [link] uses to communicate configurations to the Bridge. It is a JSON file that contains information on how the brige is to handle the processing and formatting of data.
+
+### Data Pipeline
+The Data Pipeline is the backend of our platform. It manages all the logic of storing and routing SceneMarks and SceneData to the various other components. This includes the management of SMK and SceneData databases, the handling of notifications for the mobile app, and translating requests for data to the user-facing applications. Additionally, the Data Pipeline handles AI processing via AI Nodes. Don't confuse these with Bridge Nodes (which are devices). When the mobile application displays a video recording or alerts a user about an intruder, it is receiving all that information from the Data Pipeline. It is written in C# and deployed in k8s via Azure.
+
+### AI Nodes
+
+### BSS
+The Business Support System, or BSS, is the web portal used to configure the platform. It is a website with a uniform backend managed by Scenera, and a fully customizable front end that can be tailored for inidividual applications and use cases. Users login to the BSS to manage their **Bridge** processors, manage their cameras and RTSP feeds, and add/remove additional devices or sensors. It is built in React with a Nodejs backend, and deployed via Azure Web Apps.
+
+### Developer Portal
+Similar to the BSS, but for developers who are working on the platform's capabiliites, rather than individual configuration. Users can log into the Developer Portal to add or remove new AI algorithms, select which pipelines are available to app users, or define new sensor types. This is a website built with a Python Backend and Django frontend.
+
+### Account Service
+The Account Service is a an API backend that manages user accounts and devices in the NICE ecosystem. All devices, users, and bridges as well as the connections between them, are maanged by the Account Service. This is implemented via serveless REST API in Azure Functions. 
+
+### License Authority
+The License Authority, or NICE LA, is the authentication server for the NICE ecosystem. As the Account Service adds and configures users and devices, the NICE LA verifies that the certificates and tokens are valid. This server is built in Tomcat & hosted as an Azure Virtual Machine.
+
+### Key Service
+The Key Service handles all JWT encryption, decryption, and token generation. It works closely with the NICE AS to guarantee that all devices are authorized to access our platform, as well to protect the platform from unwanted access. The Key Service is a serverless REST backed built in Azure Functions.  
+
+We will discuss these terms in more detail below.
+
 
 ## The SceneMark
 
@@ -139,7 +182,7 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
 ```
 Let's go through these items one by one.
 
-## Top Level Elements
+### Top Level Elements
 
 ```json
 "SceneMarkID": "SMK_00000013-60ed-9b3e-8002-000000001951_0001_182a2ae4"
@@ -193,7 +236,7 @@ Possible values:
 
 N.B. This setting is currently not properly implemented and the SceneMarkStatus is always set to "Active".
 
-## VersionControl
+### VersionControl
 
 The purpose of the Version Control is to keep track of what nodes the SceneMark has visited --and consequently what each node has contributed to the processing. The VersionControl item contains a VersionList (it is nested because the VersionControl itself also takes a DataPipelineID, set automatically by the pipeline) the entries of which log when and by what the SceneMark was updated.
 
@@ -214,7 +257,7 @@ The **DateTimeStamp** refers to exactly when the particular node applied its pro
 
 The **NodeID** contains the unique identifier of the node that made the contribution, here written as "Bridge" for readability, to it will rather take the form of a guid.
 
-## ThumbnailList
+### ThumbnailList
 
 ```json
 "ThumbnailList": [
@@ -227,7 +270,7 @@ The **NodeID** contains the unique identifier of the node that made the contribu
 
 The **ThumbnailList** is there to change the thumbnail that is displayed in the app, should any node in the chain decide so. It contains the **VersionNumber** of the node that made the change, and the **SceneDataID** of the image that should feature as a thumbnail. The reason the app does not simply infer the latest thumbnail from the SceneDataList is that the above should allow you to set non-thumbnail images as thumbnail as well, without necessarily classifying them so.
 
-## AnalysisList
+### AnalysisList
 
 The purpose of the AnalysisList is to contain within itself items that summarise all (AI) processing done within a single node. Each node updates the SceneMark with one unique entry, which may contain multiple **DetectedObjects** (explained below).
 
@@ -335,7 +378,7 @@ The **BoundingBox** is an object that takes the *upper-left* **XCoordinate**, *u
 
 Then finally the **RelatedSceneData** specifies which scenedata the object was detected on, or in.
 
-## Attributes
+### Attributes
 
 Attributes are encapsulated within the DetectedObject item. They may be used to list any detail about the object. For example. faces may be given a mood, or objects a color.
 
@@ -358,7 +401,7 @@ The **VersionNumber** in the attributes list refers to the node that made this c
 
 And **ProbabilityOfAttribute** sets the confidence for this particular attribute. (Not required, defaulted to 1.0)
 
-## SceneDataList
+### SceneDataList
 
 The SceneDataList contains all the SceneData that is linked to this Scene. SceneData associated with a SceneMark is typically added by the Bridge or the camera itself. Nodes may add SceneData items too, should they wish to.
 
@@ -445,3 +488,11 @@ There is a distinct **DataType** reserved for the thumbnail, because otherwise d
 The **Resolution** is used to specify the size of image or video data. It takes a **Height** and a **Width**
 
 And the **SceneDataURI** contains a readily accessible link containing the SceneData. Should a node add SceneData, it then must upload the SceneData somewhere for access.
+
+## The Bridge 
+- As we described before, the Bridge is a processor that turns raw information into SceneMarks and SceneData, conducts initial AI analysis on that data, then sends it into our backend.
+- The Bridge can be implemented as a docker container or run natively in Python, and can run on physical hardware (usually the Intel NUC or Nvidia Jetson), in cloud VM (typically provisioned via Azure), in the MEC (through one of our 5G partners), or even on the sensor itself (currently in development to be run on Android-powered cameras with onboard processing, as well as some other architectures). 
+- Each bridge device can process multiple camera streams or sensor inputs (called "nodes") simultaneously, and is limited only by its processing power. For example, a massive VM may be able to process 1000 camera streams, while a tiny RaspberryPi may only be able to handle 1 or 2 cameras. Obviously, if the bridge is running demanding AI algorithms as well, it will be able to handle fewer camera streams. The processing requirements grow linearly with the # of cameras or devices.
+- The bridge can use the results of its AI capabilities to filter unwanted SceneMarks and SceneData from entering the system. A large percentage of camera footage is useless (nightime shots of empty hallways, random vehicles harmlessly driving by, employees riding the elevator to work). Recording this footage is expensive in bandwidth and storage, and also a liability from a privacy perspective. People shouldn't have recordings of them sitting somewhere without purpose. The bridge can use AI to determine what footage is not worth keeping, and discard it at that time, preventing unnecessary costs and protecting people's privacy.
+- The Bridge can be configured in many different ways. For example, the number of nodes processed, the AI algorithms in use, the objects to be filtered or ignored, and the length of the video recordings in the SceneData are all values that the user can set. These settings are managed by the user through the Business Support System (BSS).[link]. 
+    - The BSS passes these configurations to the Bridge via a data structure called a SceneMode.[link]
