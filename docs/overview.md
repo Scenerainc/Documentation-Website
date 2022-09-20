@@ -130,7 +130,7 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
             "SourceNodeID": "00000013-60ed-9b3e-8002-000000001951_0001", mandatory
             "SourceNodeDescription": "Scenera Bridge", optinoal
             "DataType": "Thumbnail", mandatory
-            "Status": "Upload in Progress", mandatory (does the datapipeline set this?)
+            "Status": "Upload in Progress", mandatory (set automatically)
             "Encryption": {}, optional
             "MediaFormat": "JPEG", optional
             "Resolution": { optional
