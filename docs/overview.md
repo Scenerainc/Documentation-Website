@@ -6,11 +6,6 @@ slug: general
 
 **This page is under construction**
 
-* TODO: add schemalink
-* TODO: add types of all fields
-* TODO: add whether any fields are required
-* TODO: add diagram that explains the layout
-
 Scenera is a real-time IoT analytics platform. It allows devlopers to process, analyze, encrypt, and store data from cameras or other IoT sensors, and receive the results on a mobile or web application. With all it's complexity and pieces, we've built this guide to help explain the system from end to end.
 
 Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. **The Bridge** is a local device, located close to the cameras, that selects from the incoming video-stream based on its settings.
@@ -80,7 +75,7 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
         "VersionList": [
             {
                 "VersionNumber": 1.0, mandatory
-                "DateTimeStamp": "2022-07-19T16:25:21.647Z", mandatory (TODO: make it so that the pipeline puts it in for you)
+                "DateTimeStamp": "2022-07-19T16:25:21.647Z", mandatory
                 "NodeID": "Bridge" mandatory
             }
         ]
@@ -117,10 +112,10 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
                         }
                     ],
                     "BoundingBox": { optional
-                        "XCoordinate": 10, mandatory
-                        "YCoordinate": 30, mandatory
-                        "Height": 10, mandatory
-                        "Width": 10 mandatory
+                        "XCoordinate": 0.80, mandatory
+                        "YCoordinate": 0.30, mandatory
+                        "Height": 0.30, mandatory
+                        "Width": 0.80 mandatory
                     },
                     "RelatedSceneData": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_e4041246" mandatory
                 }
@@ -340,10 +335,10 @@ The **AnalysisDescription** describes the algorithm used in a human readable for
         "Probability": 0.73,
         "Attributes": [ ... ],
         "BoundingBox": {
-            "XCoordinate": 10,
-            "YCoordinate": 30,
-            "Height": 10,
-            "Width": 10
+            "XCoordinate": 0.80,
+            "YCoordinate": 0.30,
+            "Height": 0.30,
+            "Width": 0.80
         },
         "RelatedSceneData": "SDT_00000013-60ed-9b3e-8002-000000001951_0001_e4041246"
     }
@@ -374,7 +369,7 @@ The **ItemID** is a string that allow you to recognize the item as being a parti
 
 **Attributes** can be used to cover any and all aspects of the detected object and are explained below.
 
-The **BoundingBox** is an object that takes the *upper-left* **XCoordinate**, *upper-left* **YCoordinate**, **Height** & **Width** of a bounding box that surrounds some object or objects.
+The **BoundingBox** is an object that takes the relative floats *upper-left* **XCoordinate**, *upper-left* **YCoordinate**, **Height** & **Width** of a bounding box that surrounds some object or objects.
 
 Then finally the **RelatedSceneData** specifies which scenedata the object was detected on, or in.
 
