@@ -61,7 +61,7 @@ We will discuss these terms in more detail below.
 
 The SceneMark is the gold standard data structure for scenes. After the SceneMarks and SceneData are sent to the API, these are merged such that the SceneMark refers to the corresponding SceneData pieces. This updating happens in real time, such that some SceneData pieces may still be uploading, as can be the case with longer videos. During that time the SceneMark is already available for further processing should you wish to, by configuring the minimum amount of SceneData it needs to wait for.
 
-An example SceneMark is shown below. Some aspects of the SceneMark are missing from this example, as they are currently not in use. The full schema can be found at :SCHEMALINK:
+An example SceneMark is shown below. Some aspects of the SceneMark are missing from this example, as they are currently not in use. The full schema can be found at [https://docs.scenera.live/schemas/v1.0/scenemark.json](https://docs.scenera.live/schemas/v1.0/scenemark.json).
 
 ```json
 {
