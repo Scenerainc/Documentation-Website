@@ -106,6 +106,10 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
                     "Probability": 0.73, optional
                     "Frame": 1, optional
                     "Timestamp": "2022-07-19T16:25:21.647Z", optional
+                    "Timeline": { optional
+                        "ID": "Track1", mandatory
+                        "URI": "http://storage.blob/track1" optional
+                    },
                     "Attributes": [ optional
                         {
                             "VersionNumber": 1.0, mandatory
@@ -380,6 +384,17 @@ The **ItemID** is a string that allow you to recognize the item as being a parti
 **Frame** is a field we use for tracking in the Cloud. By setting what frame this object was detected in, we can string along tracks from frames and bounding boxes.
 
 **Timestamp** can be used to locate objects and frames in time. Possibly to address speed of movement, and to check frames.
+
+**Timeline** is used to capture what timeline the detected object is categorised into. E.g. 'track1'. In this object we have the following fields:
+
+```json
+"Timeline": { 
+    "ID": "Track1",
+    "URI": "http://storage.blob/track1"
+},
+```
+
+Here **ID** is the identifier of the timeline, and the **URI** links to the history of that structure in the database.
 
 **Attributes** can be used to cover any and all aspects of the detected object and are explained below.
 

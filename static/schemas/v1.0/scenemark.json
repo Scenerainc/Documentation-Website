@@ -62,6 +62,12 @@
                   "null"
                 ]
               },
+              "Server": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
               "NodeID": {
                 "type": "string"
               }
@@ -209,6 +215,39 @@
                     "null"
                   ],
                   "description": "Unique ID that is associated with this instance of object. This is an optional field that may be used to track objects across different scenemarks."
+                },
+                "Frame": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Sets the frame number this detection was found in."
+                },
+                "Timestamp": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Timestamp of this particular detection"
+                },
+                "Timeline": {
+                  "type": "object",
+                  "properties": {
+                    "ID": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Timeline identifier"
+                    },
+                    "URI": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Links to the timeline history in the database"
+                    }
+                  }
                 },
                 "Probability": {
                   "type": [
