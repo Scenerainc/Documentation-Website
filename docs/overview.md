@@ -76,6 +76,7 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
             {
                 "VersionNumber": 1.0, mandatory
                 "DateTimeStamp": "2022-07-19T16:25:21.647Z", mandatory
+                "Server": "Edge", optional (set automatically)
                 "NodeID": "Bridge" mandatory
             }
         ]
@@ -103,6 +104,8 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
                     "ItemID": "", optional
                     "ItemTypeCount": 1, optional
                     "Probability": 0.73, optional
+                    "Frame": 1, optional
+                    "Timestamp": "2022-07-19T16:25:21.647Z", optional
                     "Attributes": [ optional
                         {
                             "VersionNumber": 1.0, mandatory
@@ -172,7 +175,9 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
             },
             "SceneDataURI": "https://example.scenedata.uri/video.mp4"
         }
-    ]
+    ],
+    "ParentSceneMarks": "", optional
+    "ChildSceneMarks": "", optional
 }
 ```
 Let's go through these items one by one.
@@ -241,6 +246,7 @@ The purpose of the Version Control is to keep track of what nodes the SceneMark 
         {
             "VersionNumber": 1.0,
             "DateTimeStamp": "2022-07-19T16:25:21.647Z",
+            "Server": "Edge",
             "NodeID": "Bridge"
         }
     ]
@@ -248,7 +254,9 @@ The purpose of the Version Control is to keep track of what nodes the SceneMark 
 ```
 The **VersionNumber** above refers to the point in the node sequence that the current node takes on. The bridge is always 1.0, and any subsequent nodes will infer their own VersionNumber from the highest number in this list, incremented by 1.0. This VersionNumber is distinct from the Version of the SceneMark (see above).
 
-The **DateTimeStamp** refers to exactly when the particular node applied its processing
+The **DateTimeStamp** refers to exactly when the particular node applied its processing.
+
+The **Server** field refers to where the node ran, which can be either "Edge" or "Cloud". It exists to distinguish nodes ran before the PaaS ("Edge") and those carried out by the NodeSequencer ("Cloud").
 
 The **NodeID** contains the unique identifier of the node that made the contribution, here written as "Bridge" for readability, to it will rather take the form of a guid.
 
@@ -333,6 +341,8 @@ The **AnalysisDescription** describes the algorithm used in a human readable for
         "ItemID": "",
         "ItemTypeCount": 1,
         "Probability": 0.73,
+        "Frame": 1,
+        "Timestamp": "2022-07-19T16:25:21.647Z",
         "Attributes": [ ... ],
         "BoundingBox": {
             "XCoordinate": 0.80,
@@ -366,6 +376,10 @@ The **ItemID** is a string that allow you to recognize the item as being a parti
 **ItemTypeCount** is an integer that counts the number of that ItemType you've decided to log into a single detected object item.
 
 **Probability** is the confidence level of what you've found. This is hard to do for aggregates (ItemTypeCount >= 2).
+
+**Frame** is a field we use for tracking in the Cloud. By setting what frame this object was detected in, we can string along tracks from frames and bounding boxes.
+
+**Timestamp** can be used to locate objects and frames in time. Possibly to address speed of movement, and to check frames.
 
 **Attributes** can be used to cover any and all aspects of the detected object and are explained below.
 
@@ -483,6 +497,8 @@ There is a distinct **DataType** reserved for the thumbnail, because otherwise d
 The **Resolution** is used to specify the size of image or video data. It takes a **Height** and a **Width**
 
 And the **SceneDataURI** contains a readily accessible link containing the SceneData. Should a node add SceneData, it then must upload the SceneData somewhere for access.
+
+Lastly, **ParentSceneMarks** and **ChildSceneMarks** are fields used to link this SceneMark to other SceneMarks. It is not currently used.
 
 ## The Bridge 
 - As we described before, the Bridge is a processor that turns raw information into SceneMarks and SceneData, conducts initial AI analysis on that data, then sends it into our backend.
