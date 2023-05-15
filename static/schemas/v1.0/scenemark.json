@@ -230,7 +230,7 @@
                   ],
                   "description": "Timestamp of this particular detection"
                 },
-                "Timeline": {
+                "DirectionalMovement": {
                   "type": "object",
                   "properties": {
                     "ID": {
@@ -238,14 +238,14 @@
                         "string",
                         "null"
                       ],
-                      "description": "Timeline identifier"
+                      "description": "DirectionalMovement identifier"
                     },
                     "URI": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "Links to the timeline history in the database"
+                      "description": "Links to the directional movement history in the database"
                     }
                   }
                 },

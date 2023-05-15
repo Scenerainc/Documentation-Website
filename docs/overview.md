@@ -385,16 +385,16 @@ The **ItemID** is a string that allow you to recognize the item as being a parti
 
 **Timestamp** can be used to locate objects and frames in time. Possibly to address speed of movement, and to check frames.
 
-**Timeline** is used to capture what timeline the detected object is categorised into. E.g. 'track1'. In this object we have the following fields:
+**DirectionalMovement** is used to capture what directional movement the detected object is categorised into. E.g. 'track1'. In this object we have the following fields:
 
 ```json
-"Timeline": { 
+"DirectionalMovement": { 
     "ID": "Track1",
     "URI": "http://storage.blob/track1"
 },
 ```
 
-Here **ID** is the identifier of the timeline, and the **URI** links to the history of that structure in the database.
+Here **ID** is the identifier of the directional movement, and the **URI** links to the history of that structure in the database.
 
 **Attributes** can be used to cover any and all aspects of the detected object and are explained below.
 
