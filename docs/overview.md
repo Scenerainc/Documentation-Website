@@ -106,7 +106,7 @@ An example SceneMark is shown below. Some aspects of the SceneMark are missing f
                     "Probability": 0.73, optional
                     "Frame": 1, optional
                     "Timestamp": "2022-07-19T16:25:21.647Z", optional
-                    "Timeline": { optional
+                    "DirectionalMovement": { optional
                         "ID": "Track1", mandatory
                         "URI": "http://storage.blob/track1" optional
                     },
