@@ -8,6 +8,7 @@
         <Shortcut link="/node-sdk" text="Node SDK" icon="box-icon" />
         <Shortcut link="/scenera-bridge-library" text="Bridge" icon="cpu-icon" />
         <Shortcut link="/android-app-setup" text="Android App SDK" icon="terminal-icon" />
+        <Shortcut link="/bss" text="BSS" icon="box-icon" />
       </nav>
     </div>
   </Layout>
