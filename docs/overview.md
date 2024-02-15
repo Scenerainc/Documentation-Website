@@ -4,7 +4,7 @@ date: 2023-05-09 13:25:34
 slug: general
 ---
 
-**This page is under construction - testing**
+**This page is under construction**
 
 Scenera is a real-time IoT analytics platform. It allows devlopers to process, analyze, encrypt, and store data from cameras or other IoT sensors, and receive the results on a mobile or web application. With all it's complexity and pieces, we've built this guide to help explain the system from end to end.
 
