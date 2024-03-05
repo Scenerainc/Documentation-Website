@@ -1,10 +1,10 @@
+---
+title: BSS User Guide
+date: 2018-09-15 07:42:34
+slug: bss
+---
 
 **This page is under construction** test
-
----
-Layout: default
-title: BSS User Guide
----
 
 # How to Log-In
 ![WachterBSS-LoginPage](https://github.com/Scenerainc/Documentation-Website/assets/160102817/d60dec6f-ba04-4faf-bbd8-48310cca70b7)
