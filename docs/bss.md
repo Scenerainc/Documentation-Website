@@ -7,7 +7,7 @@ slug: bss
 **This page is under construction** test
 
 # How to Log-In
-![](images/Login%20Page.png)
+[![](images/Login%20Page.png)](https://github.com/Scenerainc/Documentation-Website/blob/main/images/Login.Page.png)
 
 
 1. Visit the Scenera's Business Support System, Maistrous Live website at [https://maistrous.scenera.live/login].
