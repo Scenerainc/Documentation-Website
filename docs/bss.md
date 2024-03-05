@@ -7,7 +7,7 @@ slug: bss
 **This page is under construction** test
 
 # How to Log-In
-![Uploading Login Page.png…]()
+[![Uploading Login Page.png…]()](https://github.com/Scenerainc/Documentation-Website/blob/main/images/Login%20Page.png)
 
 1. Visit the Scenera's Business Support System, Maistrous Live website at [https://maistrous.scenera.live/login].
 2. Enter your username in the "login.userIDEmail".
