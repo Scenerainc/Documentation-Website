@@ -71,14 +71,20 @@ The filter feature allows users to refine the main dashboard by various criteria
 
 
 # Dashboard View
+The "Dashboard" view in MAIstro allows users to efficiently manage and view multiple dashboards related to various operational centers, such as warehouses, service centers, offices, and more.
 ![Dashboard Tab](https://github.com/Scenerainc/Documentation-Website/assets/160102817/a8c43bee-89f9-4b4f-8fae-b43f724a91d5)
-
 
 1. Customize the layout and appearance of your dashboard(s).
 2. Choose which widgets, charts, or metrics to display for different end-users/groups (e.g., Safety & Security, Maintenance, Janitorial, etc.)
 3. Set up requirements, alerts and notifications for specific events or thresholds.
 4. Manage data sources and integrations for real-time updates.
 
+## Operation Center Pulldown
+![Dashboard OpsCenter](https://github.com/Scenerainc/Documentation-Website/assets/160102817/379d31f7-0fb1-4f2e-8c51-bcd733704b4c)
+
+## Set to Default
+
+## Arrow Button for Details
    
 # Devices View
 
