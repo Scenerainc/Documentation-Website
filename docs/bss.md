@@ -79,13 +79,39 @@ The "Dashboard" view in MAIstro allows users to efficiently manage and view mult
 3. Set up requirements, alerts and notifications for specific events or thresholds.
 4. Manage data sources and integrations for real-time updates.
 
-## Operation Center Pulldown
+## Selecting Operation Centers
+Use the "Operation Center" dropdown menu to choose specific regions or operational centers you want to view, such as "West Coast Warehouses" or "Northeast Retail Stores". (Example shows "Wachter_OP_PoC").
 ![Dashboard OpsCenter](https://github.com/Scenerainc/Documentation-Website/assets/160102817/379d31f7-0fb1-4f2e-8c51-bcd733704b4c)
 
-## Set to Default
+## Set to Default & Details Arrow Key
+<img width="1365" alt="Dashboard SetToDefault" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/3ee06ea9-2c11-42a1-8233-6a821224a2e4">
 
-## Arrow Button for Details
-   
+1. Set a customized dashboard as your default by clicking "Set as Default".
+2. Use the ">" button to explore further details of the selected dashboard.
+
+## Detailed Dashboard View
+The detailed view allows users to see the personalized dashboard for each warehouse, data center, or retail store.
+
+1. Use "Go to Dashboard List" to return to the main dashboard list.
+2. Select different dashboards from the "Dashboard" pulldown for easy navigation.
+3. Choose specific buildings from the "Building" pulldown, useful for managing multiple buildings.
+4. Select individual floors using the "Floor" pulldown if the building has multiple levels.
+
+<img width="1620" alt="Dashboard DetailsTab1" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/2d2de26a-799d-423b-b408-bd3f49a8b59b">
+
+<img width="1620" alt="Dashboard DetailsTab2" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/5e6380e0-fafb-448f-9c36-f826b2cfda63">
+
+#### Customize the dashboard to your operational needs with various widgets.
+#### Widgets can include:
+   - "Floor Maps" showing device locations and important areas.
+   - "Plant Status" to monitor plant conditions.
+   - "IP Cameras" displaying event detection locations.
+   - "Event List" showing detected events.
+   - "Weather" providing general weather forecast.
+   - "Weather Rooftop" for current outdoor weather.
+   - "Energy Trend" tracking energy usage.
+   - "Occupancy Trend" monitoring foot traffic.
+
 # Devices View
 
 
