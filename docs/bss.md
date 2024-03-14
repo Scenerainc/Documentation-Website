@@ -113,6 +113,33 @@ The detailed view allows users to see the personalized dashboard for each wareho
    - "Occupancy Trend" monitoring foot traffic.
 
 # Devices View
+- Organize Pulldown: Allows users to organize and order the list by specific headers such as camera, device, operation center, building, etc.
+- Filter: Functionality to refine or narrow down the displayed devices based on specific criteria.
+- New Device: Option to add a new camera, device or equipment to the list.
+
+### Device Management View
+<img width="1393" alt="Devices DeviceMgt" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f3117e56-dbc6-4c9a-9afb-2eb2ca84f322">
+
+1. Status: Current operational status of the device (e.g., “Active”, “Inactive”).
+2. Device: Type or model of the device.
+3. Building: Location or building where the device is installed.
+4. Operation Team: Team or department responsible for managing the device.
+5. Operation Center: Centralized operational management center associated with the device.
+6. Customer: Name or identifier of the customer associated with the device.
+7. Camera: Identifier or name of the camera (if applicable).
+8. Register Date: Date when the device was registered or installed.
+
+### Camera Management View
+<img width="1393" alt="Devices CameraMgt" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/7abf3e8b-1fd3-4231-a9cd-d3db77eb2530">
+
+1. Status: Current operational status of the camera (e.g., “Active”, “Inactive”).
+2. Camera: Identifier or name of the camera with unique locations (e.g., company_camera.location_unique.identifier)
+3. Device: Name of the device, typically type or model of the device.
+4. Building: Unique location or building identifier where the camera is installed.
+5. Operation Center: Centralized operational management center associated with the camera.
+6. Operation Team: Team or department responsible for managing the camera.
+7. Register Date: Date when the camera was registered or installed.
+8. Config: Configuration settings or parameters for the camera.
 
 
 # Users View
