@@ -141,15 +141,21 @@ The detailed view allows users to see the personalized dashboard for each wareho
 7. Register Date: Date when the camera was registered or installed.
 8. Config: Configuration settings or parameters for the camera.
 
-#### How To Add New Camera
-- Click on the 'New Camera' Button<img width="1490" alt="Devices AddCamera" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/1969c7c7-28e3-4c97-a9bd-cc391f0f493c">
+### How To Add/Delete Camera
+<img width="1490" alt="Devices EditCamera" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a6874de2-45b8-4b33-9cd5-2c2e7ef9e099">
 
-- Fill out the Required Fields such as:
-   - Assign the Camera to the Operations Center and Team
-   - Select the building and floor for installation of registering camera
-   - Use a unique camera name (e.g., *CenterName_Location_Area*)
-   - Note: Please request assistance if a new time zone is needed. 
-<img width="1490" alt="Devices NewCameraRegistration" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f9caaa2c-e75d-462f-8097-db8dfaaa8e8a">
+   ### To Delete A Camera
+   - To Delete a Camera, click on 'Trash Can' Icon
+   - Press 'Confirm'
+  
+   ### To Add A Camera
+   - Click on the 'New Camera' Button
+   - Fill out the Required Fields such as:
+      - Assign the Camera to the Operations Center and Team
+      - Select the building and floor for installation of registering camera
+      - Use a unique camera name (e.g., *CenterName_Location_Area*)
+      - Note: Please request assistance if a new time zone is needed. 
+   <img width="1490" alt="Devices NewCameraRegistration" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f9caaa2c-e75d-462f-8097-db8dfaaa8e8a">
 
 
 # Users View
