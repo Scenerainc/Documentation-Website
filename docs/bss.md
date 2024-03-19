@@ -141,7 +141,44 @@ The detailed view allows users to see the personalized dashboard for each wareho
 7. Register Date: Date when the camera was registered or installed.
 8. Config: Configuration settings or parameters for the camera.
 
+#### How To Add New Camera
+- Click on the 'New Camera' Button<img width="1490" alt="Devices AddCamera" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/1969c7c7-28e3-4c97-a9bd-cc391f0f493c">
+
+- Fill out the Required Fields such as:
+   - Assign the Camera to the Operations Center and Team
+   - Select the building and floor for installation of registering camera
+   - Use a unique camera name (e.g., *CenterName_Location_Area*)
+   - Note: Please request assistance if a new time zone is needed. 
+<img width="1490" alt="Devices NewCameraRegistration" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f9caaa2c-e75d-462f-8097-db8dfaaa8e8a">
+
 
 # Users View
+In the 'Users' tab of the BSS, administrators and BSS users can manage user profiles, security clearances, and alarm configurations.
+
+![Users Tab](https://github.com/Scenerainc/Documentation-Website/assets/160102817/804bb881-3b5c-44ee-a05d-288bfe5f71f8)
+
+### How to Add/Delete New Users
+<img width="1601" alt="Users UserMgt Add Delete" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/e0c65646-c76e-454d-a0d6-2622b270fe34">
+
+   ### To Delete Users
+   1. Click on the Trash Can Icon
+   2. Press 'Confirm
+
+   ### To Add Users
+
+   1. Click on "New User" Button
+   2. Fill Out Required Fields from the 'Register New User' Window
+   <img width="1556" alt="Register NewUser" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/333de0fc-3019-4d21-a499-112ae65d7c45">
+   
+   <img width="396" alt="Authority Of Users" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/aa348c4a-0ea0-4192-8188-88dba442d565">
+   
+   *User Authority Categories:*
+   - IOC Administrator: Manages system settings and user permissions at the highest level.
+   - Operations Team Administrator: Oversees user access and tasks for the operations team.
+   - Operations Center Administrator: Controls access and functions specific to the operations center.
+   - Facility Staff: Handles facility-related tasks like maintenance and cleaning.
+   - Security Manager: Manages security measures and user access.
+   - Security Guard: Monitors and enforces security procedures.
+   - Building Owner: Manages property ownership and finances.
 
 
