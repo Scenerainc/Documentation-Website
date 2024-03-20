@@ -6,6 +6,7 @@ slug: bss
 
 **This page is under construction** test
 
+
 # How to Log-In
 ![Login Page](https://github.com/Scenerainc/Documentation-Website/assets/160102817/c826fd24-f712-49c2-9093-9551040a8170)
 
@@ -16,6 +17,7 @@ slug: bss
 5. To see details of Terms & Policy, please refer and links on "Terms of Use " and "Privacy Policy".
 6. Upon logging in, you will be directed to the tab that you have set as the default.
 
+***************************************************************************************************
 
 # Main View
 Upon logging in, "Main" tab is the very first tab on the left column. The "Main" view allows you to interact with and analyze data related to Events, Event Lists, and Processed Rates of the events. This view cannot be customized.
@@ -68,6 +70,7 @@ The filter feature allows users to refine the main dashboard by various criteria
 - **Status** **Filter**: Allows users to filter events based on their current status, such as viewed, unviewed, unresolved, or resolved. Users can choose to view events with a particular status or combination of statuses to track their progress.
 - **Register** **Date** **Filter**: Enables users to filter events based on the date they were registered or logged in the system. Users can specify a date range to view events registered within that timeframe.
 
+***************************************************************************************************
 
 # Dashboard View
 The "Dashboard" view in MAIstro allows users to efficiently manage and view multiple dashboards related to various operational centers, such as warehouses, service centers, offices, and more.
@@ -110,6 +113,8 @@ The detailed view allows users to see the personalized dashboard for each wareho
    - "Weather Rooftop" for current outdoor weather.
    - "Energy Trend" tracking energy usage.
    - "Occupancy Trend" monitoring foot traffic.
+
+***************************************************************************************************
 
 # Devices View
 - Organize Pulldown: Allows users to organize and order the list by specific headers such as camera, device, operation center, building, etc.
@@ -195,6 +200,7 @@ The detailed view allows users to see the personalized dashboard for each wareho
 9. AI Server(Pipeline) Diagnosis Result/Time: Processing result and time for events sent from the data pipeline to the algorithm server
 10. Alarm Diagnosis Result/Time: Alarm sending result and time for events sent from the data pipeline to the BSS
 
+***************************************************************************************************
 
 # Users View
 In the 'Users' tab of the BSS, administrators and BSS users can manage user profiles, security clearances, and alarm configurations.
