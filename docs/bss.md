@@ -22,7 +22,6 @@ Upon logging in, "Main" tab is the very first tab on the left column. The "Main"
 
 ![Main Tab](https://github.com/Scenerainc/Documentation-Website/assets/160102817/05c8e2cb-9d85-4172-bc02-7f70687cfe27)
 
-
 ### Events View
 The "Events" section provides users with high-level data points regarding event status, enabling them to quickly understand the number of events that have been viewed/unviewed and resolved/unresolved.
 ![Main Events](https://github.com/Scenerainc/Documentation-Website/assets/160102817/d60261b9-db8c-4139-b2d1-6cbbaf55f94b)
