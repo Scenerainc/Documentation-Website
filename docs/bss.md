@@ -180,10 +180,10 @@ The detailed view allows users to see the personalized dashboard for each wareho
 ### Self-Check Result View
 <img width="1218" alt="Devices SelfCheckResult" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/1d7b60c9-033a-41ae-9da2-dc2928c64fac">
 
-Note:
-   - Self-Check is an additional function to identify problematic components (bridge devices, data pipelines, etc.) in the entire system, discover the cause, and take action efficiently by preparing a video with 100% guaranteed event detection in advance and sending the video to the bridge device -> Algorithm Server -> Data Pipeline -> BSS to check whether an alarm occurs at the end.
-   - Depending on the event (Intrusion, Loitering ..), it may not go through both AI Server (BD) and AI Server (Pipeline) steps, only one step, or both steps. An event with a Diagnosis Result of '-' means that it does not go through that step.
-   - Diagnosis Result : Success - Diagnosis success, Fail - Diagnosis failure
+   Note:
+      - Self-Check is an additional function to identify problematic components (bridge devices, data pipelines, etc.) in the entire system, discover the cause, and take action efficiently by preparing a video with 100% guaranteed event detection in advance and sending the video to the bridge device -> Algorithm Server -> Data Pipeline -> BSS to check whether an alarm occurs at the end.
+      - Depending on the event (Intrusion, Loitering ..), it may not go through both AI Server (BD) and AI Server (Pipeline) steps, only one step, or both steps. An event with a Diagnosis Result of '-' means that it does not go through that step.
+      - Diagnosis Result : Success - Diagnosis success, Fail - Diagnosis failure
 
 1. No: Simple number
 2. Device: Bridge device name
