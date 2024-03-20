@@ -23,7 +23,7 @@ Upon logging in, "Main" tab is the very first tab on the left column. The "Main"
 ![Main Tab](https://github.com/Scenerainc/Documentation-Website/assets/160102817/05c8e2cb-9d85-4172-bc02-7f70687cfe27)
 
 
-## Events View
+### Events View
 The "Events" section provides users with high-level data points regarding event status, enabling them to quickly understand the number of events that have been viewed/unviewed and resolved/unresolved.
 ![Main Events](https://github.com/Scenerainc/Documentation-Website/assets/160102817/d60261b9-db8c-4139-b2d1-6cbbaf55f94b)
 
@@ -32,7 +32,7 @@ The "Events" section provides users with high-level data points regarding event 
 - **Viewed** represents total number of events that has been viewed.
 - **Resolved** represents total number of events that has been viewed and resolved.
 
-## Events List
+### Events List
 The Event List provides users with a simplified, detailed view of all events, offering quick insights into the what, where, when, and how of each occurrence and its triggers.
 ![Main EventList](https://github.com/Scenerainc/Documentation-Website/assets/160102817/aeb52f77-00a4-415a-a7cd-e5771dbf9b57)
 
@@ -46,12 +46,12 @@ The Event List provides users with a simplified, detailed view of all events, of
 - **Identified** **Date**: Shows the date and time when the event was viewed or identified by the user.
 - **Resolved** **Date**: Specifies the date and time when the event was marked as resolved by the user or system.
 
-### Events List Filter
+#### Events List Filter
 The Event List Filter enables users to arrange the list of events based on preferred criteria
 ![Main EventListOrdering](https://github.com/Scenerainc/Documentation-Website/assets/160102817/10c35a54-a8ed-401d-a10d-d9c452e47ed0)
 
 
-## Processed State
+### Processed State
 ![Main ProcessedStatus](https://github.com/Scenerainc/Documentation-Website/assets/160102817/64a27122-ed5f-4cf9-8098-df5ef9f72bc5)
 
 - **Processed** **Rate**: The processed rate displayed in the widget represents the percentage of events that have been identified and resolved.
@@ -59,7 +59,7 @@ This metric indicates the efficiency and effectiveness of your event resolution 
 - **Unprocessed**: Reflects the number of cases/events that have not yet been resolved. Monitoring this metric helps you track the backlog of unresolved events and prioritize accordingly.
 
 
-## Home Filter
+#### Home Filter
 The filter feature allows users to refine the main dashboard by various criteria including building, detection time, categories, status, and registered date. This functionality enables users to customize their dashboard view, focusing on specific parameters to better analyze and manage the displayed data.
 ![Main Filter](https://github.com/Scenerainc/Documentation-Website/assets/160102817/46dcbd5f-a9f1-4461-a9b2-850935484d55)
 
@@ -79,11 +79,11 @@ The "Dashboard" view in MAIstro allows users to efficiently manage and view mult
 3. Set up requirements, alerts and notifications for specific events or thresholds.
 4. Manage data sources and integrations for real-time updates.
 
-## Selecting Operation Centers
+### Selecting Operation Centers
 Use the "Operation Center" dropdown menu to choose specific regions or operational centers you want to view, such as "West Coast Warehouses" or "Northeast Retail Stores". (Example shows "Wachter_OP_PoC").
 ![Dashboard OpsCenter](https://github.com/Scenerainc/Documentation-Website/assets/160102817/379d31f7-0fb1-4f2e-8c51-bcd733704b4c)
 
-## Set to Default & Details Arrow Key
+### Set to Default & Details Arrow Key
 <img width="1365" alt="Dashboard SetToDefault" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/3ee06ea9-2c11-42a1-8233-6a821224a2e4">
 
 1. Set a customized dashboard as your default by clicking "Set as Default".
@@ -117,7 +117,7 @@ The detailed view allows users to see the personalized dashboard for each wareho
 - Filter: Functionality to refine or narrow down the displayed devices based on specific criteria.
 - New Device: Option to add a new camera, device or equipment to the list.
 
-### Device Management View
+## Device Management View
 <img width="1393" alt="Devices DeviceMgt" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f3117e56-dbc6-4c9a-9afb-2eb2ca84f322">
 
 1. Status: Current operational status of the device (e.g., “Active”, “Inactive”).
@@ -129,7 +129,7 @@ The detailed view allows users to see the personalized dashboard for each wareho
 7. Camera: Identifier or name of the camera (if applicable).
 8. Register Date: Date when the device was registered or installed.
 
-### Camera Management View
+## Camera Management View
 <img width="1393" alt="Devices CameraMgt" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/7abf3e8b-1fd3-4231-a9cd-d3db77eb2530">
 
 1. Status: Current operational status of the camera (e.g., “Active”, “Inactive”).
@@ -139,16 +139,16 @@ The detailed view allows users to see the personalized dashboard for each wareho
 5. Operation Center: Centralized operational management center associated with the camera.
 6. Operation Team: Team or department responsible for managing the camera.
 7. Register Date: Date when the camera was registered or installed.
-8. Config: Configuration settings or parameters for the camera.
+8. Config: Status indicating whether the camera configuration is complete (Complete, Incomplete). The 'Complete' state is reached when the parameters and ROI settings for all nodes that will be applied to the camera are complete.
 
 ### How To Add/Delete Camera
 <img width="1490" alt="Devices EditCamera" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a6874de2-45b8-4b33-9cd5-2c2e7ef9e099">
-
-   ### To Delete A Camera
+   
+   #### To Delete A Camera
    - To Delete a Camera, click on 'Trash Can' Icon
    - Press 'Confirm'
   
-   ### To Add A Camera
+   #### To Add A Camera
    - Click on the 'New Camera' Button
    - Fill out the Required Fields such as:
       - Assign the Camera to the Operations Center and Team
@@ -156,6 +156,45 @@ The detailed view allows users to see the personalized dashboard for each wareho
       - Use a unique camera name (e.g., *CenterName_Location_Area*)
       - Note: Please request assistance if a new time zone is needed. 
    <img width="1490" alt="Devices NewCameraRegistration" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f9caaa2c-e75d-462f-8097-db8dfaaa8e8a">
+
+## Device Status View
+<img width="1159" alt="Devices DeviceStatus" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/b4147b18-9acf-42ba-9495-5a36007f899c">
+
+1. No : Simple number.
+2. Device: Bridge device name.
+3. Report Time: The last time the bridge device reported status information.
+4. Firmware Version: Firmware version of the bridge device.
+5. Uptime: The amount of time the bridge device has been up since the last boot (in seconds).
+6. CPU Usage/Temp: CPU usage/temperature of the bridge device (unit: % / °C).
+7. GPU Usage/Temp: GPU usage / temperature of the bridge device (Unit: % / °C).
+8. Memory Usage : Memory usage of the bridge device (Unit : %).
+9. SWAP Memory Usage : SWAP memory usage of the bridge device (Unit : %).
+10. Application Status: Status of the application on the bridge device - Normal: Normal, Error: Error, -: No report
+11. Camera RTSP Status : Status of RTSPs connected to the bridge device - Normal : Normal, Error : If any of the RTSPs is abnormal, - : No report
+   - If the RTSP status is Error, it is likely that there is a problem with the RTSP connection and it is disconnected.
+12. Camera FPS Status : Status indicating whether the FPS processing set for each camera is being processed normally - Normal : Normal, Error : FPS processing problem, - : Nothing to report
+   - FPS settings are 'Camera FPS' and 'FPS Drop' items in the camera configuration screen. Camera FPS: Number of frames provided by RTSP, FPS Drop: Number of frames to drop when inferencing.
+   - Example: If Camera FPS is 30 and FPS Drop is 5, the bridge device will inferencing for that RTSP at 6 frames per second.
+   - The FPS status is reported as an error when the number of frames provided by the RTSP drops or the resource usage of the bridge device increases and FPS processing is not normal.
+
+### Self-Check Result View
+<img width="1218" alt="Devices SelfCheckResult" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/1d7b60c9-033a-41ae-9da2-dc2928c64fac">
+
+Note:
+   - Self-Check is an additional function to identify problematic components (bridge devices, data pipelines, etc.) in the entire system, discover the cause, and take action efficiently by preparing a video with 100% guaranteed event detection in advance and sending the video to the bridge device -> Algorithm Server -> Data Pipeline -> BSS to check whether an alarm occurs at the end.
+   - Depending on the event (Intrusion, Loitering ..), it may not go through both AI Server (BD) and AI Server (Pipeline) steps, only one step, or both steps. An event with a Diagnosis Result of '-' means that it does not go through that step.
+   - Diagnosis Result : Success - Diagnosis success, Fail - Diagnosis failure
+
+1. No: Simple number
+2. Device: Bridge device name
+3. Camera: Camera name
+4. Event Name: The name of the event that performed the self-check
+5. Report Time: Self-Check started time
+6. Inference Engine Diagnosis Result/Time: Inferencing result and time performed on the bridge device
+7. AI Server(BD) Diagnosis Result/Time: Processing result and time for events sent from the bridge device to the algorithm server.
+8. Pipeline Diagnosis Result/Time: Processing result and time for events sent from the bridge device to the data pipeline.
+9. AI Server(Pipeline) Diagnosis Result/Time: Processing result and time for events sent from the data pipeline to the algorithm server
+10. Alarm Diagnosis Result/Time: Alarm sending result and time for events sent from the data pipeline to the BSS
 
 
 # Users View
