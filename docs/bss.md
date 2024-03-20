@@ -164,22 +164,22 @@ The detailed view allows users to see the personalized dashboard for each wareho
 ## Device Status View
 <img width="1159" alt="Devices DeviceStatus" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/b4147b18-9acf-42ba-9495-5a36007f899c">
 
-1. No : Simple number.
-2. Device: Bridge device name.
-3. Report Time: The last time the bridge device reported status information.
-4. Firmware Version: Firmware version of the bridge device.
-5. Uptime: The amount of time the bridge device has been up since the last boot (in seconds).
-6. CPU Usage/Temp: CPU usage/temperature of the bridge device (unit: % / °C).
-7. GPU Usage/Temp: GPU usage / temperature of the bridge device (Unit: % / °C).
-8. Memory Usage : Memory usage of the bridge device (Unit : %).
-9. SWAP Memory Usage : SWAP memory usage of the bridge device (Unit : %).
+1. No : Simple number
+2. Device: Bridge device name
+3. Report Time: The last time the bridge device reported status information
+4. Firmware Version: Firmware version of the bridge device
+5. Uptime: The amount of time the bridge device has been up since the last boot (in seconds)
+6. CPU Usage/Temp: CPU usage/temperature of the bridge device (unit: % / °C)
+7. GPU Usage/Temp: GPU usage / temperature of the bridge device (Unit: % / °C)
+8. Memory Usage : Memory usage of the bridge device (Unit : %)
+9. SWAP Memory Usage : SWAP memory usage of the bridge device (Unit : %)
 10. Application Status: Status of the application on the bridge device - Normal: Normal, Error: Error, -: No report
 11. Camera RTSP Status : Status of RTSPs connected to the bridge device - Normal : Normal, Error : If any of the RTSPs is abnormal, - : No report
-   - If the RTSP status is Error, it is likely that there is a problem with the RTSP connection and it is disconnected.
+   - If the RTSP status is Error, it is likely that there is a problem with the RTSP connection and it is disconnected
 12. Camera FPS Status : Status indicating whether the FPS processing set for each camera is being processed normally - Normal : Normal, Error : FPS processing problem, - : Nothing to report
-   - FPS settings are 'Camera FPS' and 'FPS Drop' items in the camera configuration screen. Camera FPS: Number of frames provided by RTSP, FPS Drop: Number of frames to drop when inferencing.
-   - Example: If Camera FPS is 30 and FPS Drop is 5, the bridge device will inferencing for that RTSP at 6 frames per second.
-   - The FPS status is reported as an error when the number of frames provided by the RTSP drops or the resource usage of the bridge device increases and FPS processing is not normal.
+   - FPS settings are 'Camera FPS' and 'FPS Drop' items in the camera configuration screen. Camera FPS: Number of frames provided by RTSP, FPS Drop: Number of frames to drop when inferencing
+   - Example: If Camera FPS is 30 and FPS Drop is 5, the bridge device will inferencing for that RTSP at 6 frames per second
+   - The FPS status is reported as an error when the number of frames provided by the RTSP drops or the resource usage of the bridge device increases and FPS processing is not normal
 
 ### Self-Check Result View
 <img width="1218" alt="Devices SelfCheckResult" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/1d7b60c9-033a-41ae-9da2-dc2928c64fac">
