@@ -1,9 +1,10 @@
 
-https://github.com/Scenerainc/Documentation-Website/assets/160102817/061c9121-d4c3-4538-b2b2-7f6538342880
-**INTERNAL USE ONLY
-**DRAFT
+# INTERNAL USE ONLY
+# DRAFT
 
-#LOGIN SYSTEM
+
+
+# LOGIN SYSTEM
 
   1. Each account is linked to a specific IOC.
   2. For instance, 'lmw_abm@tnmtech.com' can only access the ABM IOC, while a separate account like 'lmw_wachter@tnmtech.com' is required for the WACHTER IOC.
@@ -15,17 +16,17 @@ https://github.com/Scenerainc/Documentation-Website/assets/160102817/061c9121-d4
 
 
 
-#BSS USER ACCOUNTS
+# BSS USER ACCOUNTS
 
   - All existing accounts will be deleted, leaving only two new ones: support4netflix@scenera.net and developer4netflix@scenera.net. Developers will share login credentials, while customer support and others will use the support4netflix@scenera.net account. Confirmation is needed regarding the possibility of multiple logins with a single account, which was previously restricted.
     ![image](https://github.com/Scenerainc/Documentation-Website/assets/160102817/ae1ddc41-e606-4928-a717-6aaea1b9fe16)
 
-#DEVICES
+# DEVICES
 
 - Camera Management: Hiding AI Nodes
     <img width="855" alt="Screenshot 2024-04-03 at 6 54 50 PM" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a9fd42de-4604-4e74-9466-2ae48ee8133f">
 
-#DASHBOARD
+# DASHBOARD
 
 - Users with 'SCENERA Administrator' permissions can play an event, but it is not counted as 'Viewed'.
     <img width="1208" alt="Screenshot 2024-04-03 at 6 55 57 PM" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/bf90156f-7420-4865-8835-08b6af219b98">
