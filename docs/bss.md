@@ -161,16 +161,40 @@ The detailed view allows users to see the personalized dashboard for each wareho
       - Note: Please request assistance if a new time zone is needed. 
    <img width="1490" alt="Devices NewCameraRegistration" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f9caaa2c-e75d-462f-8097-db8dfaaa8e8a">
 
-### How To Modifty a New/Existing Camera
+### How To Modify a New/Existing Camera
+
+   - Go to the Camera Management section.
+   - Click on the "Modify" tab to update and modify camera details.
+   - Change camera names, resolutions, RTSP addresses, FPS settings, and more.
+   - For additional assistance, contact SCENERA's support team.
+     
 <img width="1511" alt="HowToCamera Modify" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a6501fe7-62fe-4735-ac9d-d30050fce552">
 
 
 ### How To Configure a New/Existing Camera
+
+   - Go to the Camera Management section.
+   - Click on the "Config" tab to configure and update AI nodes for each camera.
+   - Choose specific AI nodes, select an inference engine, customize detection areas, and add an ROI as needed. Follow the steps below.
+   - For additional assistance, contact SCENERA's support team.
+
 <img width="1511" alt="HowToCamera Config General" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/d9fe1b28-a45a-400c-aba8-56919d3c853a">
 
-<img width="1389" alt="HowToCamera Config AInodes" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/7dd2ff4b-a9b5-47ac-a1d6-cccd7aa3ae79">
+   1. Choose an "AI Node" from the dropdown menu. These nodes are customizable to suit your organization's requirements and may include options like Fall Detection, Zone Entry, Intrusion, or Line Crossing. Refer to the example screenshot below for clarification.
 
-<img width="1388" alt="HowToCamera Config Inference" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/83f1c9c7-0609-4d15-b022-08a69f9c8507">
+         <img width="1389" alt="HowToCamera Config AInodes" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/7dd2ff4b-a9b5-47ac-a1d6-cccd7aa3ae79">
+
+   2. Select an inference engine, such as "TNM YoloV8 M416". Refer to the example below.
+
+         <img width="1388" alt="HowToCamera Config Inference" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/83f1c9c7-0609-4d15-b022-08a69f9c8507">
+
+
+   3. Customize the detection area for each AI node. To specify the exact area, use the "Get CCTV thumbnail" feature to generate a visual representation of the detection area.
+
+   5. After generating the visual, add Regions of Interest (ROI) by clicking on "Add ROI". Use the yellow lines to mark the specific event area within the visual.
+
+     
+
 
 
 ## Device Status View
