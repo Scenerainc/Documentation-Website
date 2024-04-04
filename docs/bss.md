@@ -195,6 +195,7 @@ The detailed view allows users to see the personalized dashboard for each wareho
 
      
 ### Camera Configuration Parameters Definitions
+   ![Screenshot 2024-04-04 at 4 03 52 PM](https://github.com/Scenerainc/Documentation-Website/assets/160102817/520fa374-6905-4624-9a8f-c096f3b7ec3a)
 
    - **Recognition Rate (%)**: This parameter is no longer in use and has been replaced by the Analysis Threshold.
    - **Event Start Time (Seconds Elapsed)**: This setting applies specifically to Loitering and Falldown events. It represents the duration before an event is recognized as valid.
