@@ -194,7 +194,16 @@ The detailed view allows users to see the personalized dashboard for each wareho
    5. After generating the visual, add Regions of Interest (ROI) by clicking on "Add ROI". Use the yellow lines to mark the specific event area within the visual.
 
      
+### Camera Configuration Parameters Definitions
 
+   - **Recognition Rate (%)**: This parameter is no longer in use and has been replaced by the Analysis Threshold.
+   - **Event Start Time (Seconds Elapsed)**: This setting applies specifically to Loitering and Falldown events. It represents the duration before an event is recognized as valid.
+     Example:
+        - For Loitering events, if set to 10 seconds, a person must linger in the designated area for 10 seconds before the event is triggered.
+        - For Falldown events, if set to 10 seconds, the system waits for 10 seconds after a person falls in the designated area before registering the event.
+   - **Alarm Delay (Seconds)**: This setting determines the delay before sending a SceneMark when multiple events occur consecutively on the same camera.
+     Example:
+        - If set to 10 seconds for a specific camera, any repeated events within a 10-second window following a ZoneEntry event will be ignored, and no SceneMark will be generated.
 
 
 ## Device Status View
