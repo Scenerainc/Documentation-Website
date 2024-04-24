@@ -26,6 +26,15 @@
 - Camera Management: Hiding AI Nodes
     <img width="855" alt="Screenshot 2024-04-03 at 6 54 50 PM" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a9fd42de-4604-4e74-9466-2ae48ee8133f">
 
+- Delete Camera
+  What happens to related documents when a single camera is registered
+    - Added the camera's information to the 'nodeList' in the 'devices' document in the AccountService
+    - Added the camera's SceneMode to the 'devicescenemode' document in Controller
+    - Added 2 configs for the camera to the 'datapipelineconfig' document in the Controller
+    - Added 2 PipelineConfigurations for that camera to the 'ConfigDocuments' document in PipelineConfigFacade 
+<img width="599" alt="image" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a91422fd-1933-4a62-827c-2dbfc0049c4b">
+
+
 # DASHBOARD
 
 - Users with 'SCENERA Administrator' permissions can play an event, but it is not counted as 'Viewed'.
