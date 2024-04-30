@@ -116,18 +116,27 @@ The detailed view allows users to see the personalized dashboard for each wareho
 
 ### Adding / Editing Image Widget
    - Go to "Settings" -> Click on "Dashboard Settings" (top left) -> Select which dashboard you want to modify, then select "Modify Dashboard"
-   - *Adjusting Images:*
+   - **Adjusting Images:**
       - When you add an image, it automatically fits the width of the widget. If the image is too long, it'll trim the extra parts to keep it neat.
-   - *Setting Up the Widget:*
+   - **Setting Up the Widget:**
       - Once you've added your image and given it a title, remember to save it by clicking the "Save" button inside the widget.
       - After setting up the image widget, save the whole dashboard by clicking the "Save" button at the top-right corner.
       - You can only have one image widget at a time. If you add more than one, they'll all have the same settings.
-   - *Making Changes:*
+   - **Making Changes:**
       - If you want to change the image or anything else about the widget, make your changes and then save them using the "Save" button inside the widget.
    <img width="1505" alt="Modify Dashboard_Image_Widget" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/8105886f-7cab-4bed-8a96-888c5c92ede4">
    <img width="1511" alt="Image_Widget_Selection" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/b85a5528-6ea3-4ec7-9f18-1cb6f920dba7">
    <img width="1510" alt="Drag_drop_save" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/72101991-b914-4040-9c2c-b82850907d3b">
 
+### Rotational Dashboard Activation Guide
+
+   - **Enable/Disable Rotation:** You have the option to turn the dashboard rotation feature on or off, and choose how frequently you want the dashboards to rotate (e.g., every 10 seconds or 30 seconds).
+   - **Accessing Settings:** Navigate to Settings and locate the "IOC Settings" option at the top-left corner of the screen.
+   - **Toggle Rotation:** Within the "IOC Settings" menu, find the "Dashboard Rotation Setting" section. Here, you'll see a toggle labeled "Rotation Use or Not." Switch the toggle to the desired position to activate (green) or deactivate (gray) the rotational feature.
+   - **Adjust Rotation Interval:** If you've enabled rotation, specify the rotation interval by entering a numerical value indicating how quickly you want the dashboard to switch between screens, measured in seconds.
+   - **Save Changes:** After configuring the rotation settings, remember to click the "Save" button to apply the changes and initiate the rotational behavior of your dashboard.
+
+<img width="1498" alt="Rotational_Dashboard_On" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/a94a433b-13fd-473a-9371-e7a13c48bbc6">
 
 ***************************************************************************************************
 
@@ -291,5 +300,14 @@ In the 'Users' tab of the BSS, administrators and BSS users can manage user prof
    - Security Manager: Manages security measures and user access.
    - Security Guard: Monitors and enforces security procedures.
    - Building Owner: Manages property ownership and finances.
+
+### How To Reset Password
+
+   - **Initiating Password Reset:** If you've forgotten your password and need to reset it, start by clicking on the "reset password" option.
+   - **Enter Registered Email:** Next, type in the email address associated with your account, the one you used during registration.
+   - **Check Your Email:** After submitting your email, check your inbox. You should receive an email with instructions on how to reset your password.
+   - **Check Spam Folder:** If you haven't received the email after a few minutes, please also check your spam or junk folder in case the email was misclassified.
+   - **Follow Instructions in Email:** Open the email and follow the directions provided to reset your password securely.
+<img width="226" alt="Reset Password_Main" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/3fd046a9-b131-4b3a-8694-380485ace32d"><img width="224" alt="Reset Password_E-mail" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/f24fed21-8d9f-48fc-81ca-907e83951cc0">
 
 
