@@ -8,6 +8,7 @@ slug: bss
 | :---: | :---: |  :---:  |
 | 0.1  | 2024-03-22     | First Release    |
 | 0.2  | 2024-05-01     | New Releases for Dashboard, Widgets and Password updates  |
+| 0.3  | 2024-06-18     | Update for Event Capturing Logic & Examples |
 
 
 
@@ -233,6 +234,24 @@ The detailed view allows users to see the personalized dashboard for each wareho
    - **Alarm Delay (Seconds)**: This setting determines the delay before sending a SceneMark when multiple events occur consecutively on the same camera.
      Example:
         - If set to 10 seconds for a specific camera, any repeated events within a 10-second window following a ZoneEntry event will be ignored, and no SceneMark will be generated.
+
+#### How to Update & Edit the Scheduling Feature for Event Capturing
+Our system allows you to set specific schedules for capturing events, which can vary between weekdays and weekends. This guide explains how this scheduling feature works, especially as it relates to transitions from weekdays to weekends and vice versa.
+![BSS Configure Event Detection Time Wknd Wkdy](https://github.com/Scenerainc/Documentation-Website/assets/160102817/ac895e01-62cb-420d-afee-96662694ca0e)
+
+   - **How the System Works**: Time Adjustment for Midnight: If the scheduled end time is earlier than the start time (e.g., from 7 PM to 6 AM), it means the event capturing period goes past midnight.
+   - **Adjusting 'detectedtime'**: If the current time (detectedtime) is between midnight and the scheduled end time,    the system adds 2400 to detectedtime. This adjustment helps compare times across days. The end time (EndTime) is also increased by 2400 to align with the adjusted detectedtime.
+   - **Event Capturing Decision**: The system checks if detectedtime falls within the adjusted time range (from the start time to the adjusted end time). If it does, events are captured during this time.
+
+   - **Example Use Case Below**:
+      - Let assume:
+         - Weekdays: Capture from 7 PM to 6 AM
+         - Weekends: Capture from 2 PM to 11 AM
+      - Then:
+         - Friday at 5 AM: Captures events because it falls within the adjusted period from Thursday 7 PM to Friday 6 AM.
+         - Saturday at 5 AM: Captures events, as it's within the adjusted period from Friday 2 PM to Saturday 11 AM.
+         - Sunday at 7 AM: Still captures events, fitting within Saturday 2 PM to Sunday 11 AM (adjusted period).
+         - Monday at 7 AM: Does not capture events since it's outside the capturing period which starts at 7 PM on Sunday.
 
 
 ## Device Status View
