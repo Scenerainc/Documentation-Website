@@ -8,7 +8,7 @@ slug: bss
 | :---: | :---: |  :---:  |
 | 0.1  | 2024-03-22     | First Release    |
 | 0.2  | 2024-05-01     | New Releases for Dashboard, Widgets and Password updates  |
-| 0.3  | 2024-06-18     | Update for Event Capturing Logic & Examples |
+| 0.3  | 2024-06-18     | Update for Scheduling Feature & Event Capturing with Examples |
 
 
 
