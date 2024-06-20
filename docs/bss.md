@@ -244,15 +244,15 @@ Our system allows you to set specific schedules for capturing events, which can 
    - **Event Capturing Decision**: The system checks if detectedtime falls within the adjusted time range (from the start time to the adjusted end time). If it does, events are captured during this time.
 
    - **Example Use Case Below**:
-      - Let assume:
-         - Weekdays: Capture from 7 PM to 6 AM
-         - Weekends: Capture from 2 PM to 11 AM
-      - Then:
-         - Friday at 5 AM: Captures events because it falls within the adjusted period from Thursday 7 PM to Friday 6 AM.
-         - Saturday at 5 AM: Captures events, as it's within the adjusted period from Friday 2 PM to Saturday 11 AM.
-         - Sunday at 7 AM: Still captures events, fitting within Saturday 2 PM to Sunday 11 AM (adjusted period).
-         - Monday at 7 AM: Does not capture events since it's outside the capturing period which starts at 7 PM on Sunday.
-
+      - Suppose you set the following schedule for capturing events:
+         - Weekdays: Capture events 7pm-6am  (1900-0600)
+         - Weekends: Capture events: 2pm-11am (1400-1100)
+      - Then, we can ask:
+         - Could the events be captured Friday at 5am?  Yes. (Weekday schedule is in effect)
+         - Could the events be captured Saturday at 5am?  Yes.  (Weekend schedule has taken effect.)
+         - Could the events be captured Sunday at 7am?  Yes.  (Weekend schedule has taken effect.)
+         - Could the events be captured Monday at 7am?  No.  (Weekday schedule has taken effect.)
+           
 
 ## Device Status View
 <img width="1159" alt="Devices DeviceStatus" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/b4147b18-9acf-42ba-9495-5a36007f899c">
