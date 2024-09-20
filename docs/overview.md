@@ -6,7 +6,7 @@ slug: general
 
 **This page is under construction**
 
-Scenera is a real-time IoT analytics platform. It allows devlopers to process, analyze, encrypt, and store data from cameras or other IoT sensors, and receive the results on a mobile or web application. With all it's complexity and pieces, we've built this guide to help explain the system from end to end.
+Scenera is a real-time IoT analytics platform. It allows developers to process, analyze, encrypt, and store data from cameras or other IoT sensors, and receive the results on a mobile or web application. With all it's complexity and pieces, we've built this guide to help explain the system from end to end.
 
 Data is gathered from many cameras, and is always pre-processed by the camera itself or the Bridge. **The Bridge** is a local device, located close to the cameras, that selects from the incoming video-stream based on its settings.
 
