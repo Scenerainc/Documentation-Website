@@ -104,9 +104,9 @@ The detailed view allows users to see the personalized dashboard for each wareho
 3. Choose specific buildings from the "Building" pulldown, useful for managing multiple buildings.
 4. Select individual floors using the "Floor" pulldown if the building has multiple levels.
 
-<img width="1365" alt="Dashboard DetailsTab1" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/2d2de26a-799d-423b-b408-bd3f49a8b59b">
+<img width="1200" alt="Dashboard DetailsTab1" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/2d2de26a-799d-423b-b408-bd3f49a8b59b">
 
-<img width="1365" alt="Dashboard DetailsTab2" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/5e6380e0-fafb-448f-9c36-f826b2cfda63">
+<img width="1200" alt="Dashboard DetailsTab2" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/5e6380e0-fafb-448f-9c36-f826b2cfda63">
 
 #### Customize the dashboard to your operational needs with various widgets.
 #### Widgets can include:
