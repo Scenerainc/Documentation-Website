@@ -91,7 +91,7 @@ Use the "Operation Center" dropdown menu to choose specific regions or operation
 ![Dashboard OpsCenter](https://github.com/Scenerainc/Documentation-Website/assets/160102817/379d31f7-0fb1-4f2e-8c51-bcd733704b4c)
 
 ### Set to Default & Details Arrow Key
-<img width="1365" alt="Dashboard SetToDefault" src="https://github.com/Scenerainc/Documentation-Website/assets/160102817/3ee06ea9-2c11-42a1-8233-6a821224a2e4">
+![Dashboard SetToDefault](https://github.com/Scenerainc/Documentation-Website/assets/160102817/3ee06ea9-2c11-42a1-8233-6a821224a2e4)
 
 1. Set a customized dashboard as your default by clicking "Set as Default".
 2. Use the ">" button to explore further details of the selected dashboard.
